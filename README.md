@@ -69,7 +69,12 @@ npx skills add iamzifei/zmm --agent codex
 
 这两个平台按「卡片」列技能，所以另外提供了**一个包含全部 22 个技能的打包版**。
 
-**第 1 步**　到 [Releases](https://github.com/iamzifei/zmm/releases/latest) 下载 **`zmm-toolbox.zip`**（不用解压）
+**第 1 步**　下载 **`zmm-toolbox.zip`**（不用解压）：
+
+> ### 📦 <https://github.com/iamzifei/zmm/releases/latest/download/zmm-toolbox.zip>
+>
+> 这是**固定地址**，永远指向最新版，出了新版本也不用换链接。
+> 想看某个具体版本或更新说明，去 [Releases 页面](https://github.com/iamzifei/zmm/releases/latest)。
 
 **第 2 步**　豆包左侧点「技能·连接器·伙伴」，右上角「**+ 新建**」→ **上传技能**
 

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="zmm 技能编排图：你说一句人话，总入口判断要哪些技能，挑 1 主 + 最多 2 辅，交付一份结果，结果回流影响下次判断">
+  <defs>
+    <style>
+      .bg   { fill:#F8FAFC; }
+      .card { fill:#FFFFFF; stroke:#E2E8F0; stroke-width:1.5; }
+      .accent { fill:#EFF6FF; stroke:#BFDBFE; stroke-width:1.5; }
+      .t   { font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; fill:#0F172A; }
+      .h   { font-size:17px; font-weight:700; }
+      .b   { font-size:14px; fill:#334155; }
+      .s   { font-size:13px; fill:#64748B; }
+      .badge { fill:#2563EB; }
+      .badget { font-size:12px; font-weight:700; fill:#FFFFFF; text-anchor:middle; }
+      .chip { fill:#F1F5F9; stroke:#E2E8F0; stroke-width:1; }
+      .chipt { font-size:12.5px; fill:#475569; }
+      .arrow { stroke:#94A3B8; stroke-width:2; fill:none; }
+      .loop  { stroke:#2563EB; stroke-width:2; fill:none; stroke-dasharray:6 5; }
+      .loopt { font-size:12px; fill:#2563EB; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+    </marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="960" height="540" rx="14"/>
+
+  <!-- ── 第一行：四步 ──────────────────────────────── -->
+  <g class="t">
+    <rect class="card" x="18"  y="28" width="210" height="132" rx="10"/>
+    <circle class="badge" cx="40" cy="50" r="10"/><text class="badget" x="40" y="54">1</text>
+    <text class="h"   x="58" y="55">你说一句人话</text>
+    <text class="b"   x="36" y="84">「今天拍什么」</text>
+    <text class="b"   x="36" y="108">「这稿子能不能发」</text>
+    <text class="b"   x="36" y="132">「这个月钱去哪了」</text>
+    <text class="s"   x="36" y="152">不用记命令，不用懂技术</text>
+
+    <rect class="card" x="256" y="28" width="210" height="132" rx="10"/>
+    <circle class="badge" cx="278" cy="50" r="10"/><text class="badget" x="278" y="54">2</text>
+    <text class="h"   x="296" y="55">总入口判断</text>
+    <text class="b"   x="274" y="84">读当前对话的上下文</text>
+    <text class="b"   x="274" y="108">判断要一个还是一组</text>
+    <text class="b"   x="274" y="132">说明为什么挑它</text>
+    <text class="s"   x="274" y="152">只需要记一条：/zmm</text>
+
+    <rect class="card" x="494" y="28" width="210" height="132" rx="10"/>
+    <circle class="badge" cx="516" cy="50" r="10"/><text class="badget" x="516" y="54">3</text>
+    <text class="h"   x="534" y="55">挑 1 主 + 最多 2 辅</text>
+    <text class="b"   x="512" y="84">够用就只上一个</text>
+    <text class="b"   x="512" y="108">不是固定流水线</text>
+    <text class="b"   x="512" y="132">换个任务就换组合</text>
+    <text class="s"   x="512" y="152">同一个人下次来不一样</text>
+
+    <rect class="accent" x="732" y="28" width="210" height="132" rx="10"/>
+    <circle class="badge" cx="754" cy="50" r="10"/><text class="badget" x="754" y="54">4</text>
+    <text class="h"   x="772" y="55">交付一份结果</text>
+    <text class="b"   x="750" y="84">不是三份打架的报告</text>
+    <text class="b"   x="750" y="108">缺数据会明说缺什么</text>
+    <text class="b"   x="750" y="132">不拿默认值顶替</text>
+    <text class="s"   x="750" y="152">算不出来就说算不出来</text>
+  </g>
+  <path class="arrow" d="M232,94 L252,94" marker-end="url(#a)"/>
+  <path class="arrow" d="M470,94 L490,94" marker-end="url(#a)"/>
+  <path class="arrow" d="M708,94 L728,94" marker-end="url(#a)"/>
+
+  <!-- ── 第二行：两套技能 ───────────────────────────── -->
+  <g class="t">
+    <rect class="card" x="18" y="200" width="452" height="208" rx="10"/>
+    <text class="h" x="38" y="230">内容操盘手 · 15 个技能</text>
+    <text class="s" x="38" y="252">给一个人自采自编的知识型创作者</text>
+    <rect class="chip" x="38" y="266" width="414" height="34" rx="8"/>
+    <text class="chipt" x="52" y="288">主路径：选题 → 写稿 → 红线审核 → 发 → 复盘</text>
+    <text class="s" x="38" y="326">卡住了才用的专项：</text>
+    <text class="b" x="38" y="350">开头前五秒 · 哪里会被划走 · 戳不戳得中人</text>
+    <text class="b" x="38" y="374">标题与封面 · 找对标 · 口播剪辑 · 选题先试水</text>
+    <text class="s" x="38" y="396">不卡就跳过 —— 闸门数量本身会变成不发布的成因</text>
+
+    <rect class="card" x="490" y="200" width="452" height="208" rx="10"/>
+    <text class="h" x="510" y="230">小老板看盘 · 7 个技能</text>
+    <text class="s" x="510" y="252">给同时跑几条线的生意负责人</text>
+    <rect class="chip" x="510" y="266" width="414" height="34" rx="8"/>
+    <text class="chipt" x="524" y="288">主问题：钱去哪了 · 该投哪条线 · 这生意攥在谁手里</text>
+    <text class="s" x="510" y="326">三条贯穿约束：</text>
+    <text class="b" x="510" y="350">不假设你有系统 · 不用向上汇报 · 零术语</text>
+    <text class="b" x="510" y="374">对账单、订单本、微信收款、后台导出就够</text>
+    <text class="s" x="510" y="396">不是起盘工具，也不是大厂战略框架</text>
+  </g>
+
+  <!-- ── 第三行：回流 ──────────────────────────────── -->
+  <g class="t">
+    <rect class="accent" x="18" y="444" width="924" height="74" rx="10"/>
+    <circle class="badge" cx="40" cy="470" r="10"/><text class="badget" x="40" y="474">5</text>
+    <text class="h"   x="58" y="475">结果回流，下次判断跟这次不一样</text>
+    <text class="b"   x="38" y="502">复盘数据 · 到期承诺 · 已发布内容进库 · 被推翻的结论也留着 —— 一个只记成功结论的知识库不可信</text>
+  </g>
+  <!-- 回流箭头：走两套技能之间的空档竖直上行，不压任何文字 -->
+  <path class="loop" d="M480,444 L480,178 L123,178 L123,164" marker-end="url(#ab)"/>
+  <text class="loopt" x="492" y="430">回流</text>
+</svg>

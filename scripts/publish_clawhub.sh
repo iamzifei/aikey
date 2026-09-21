@@ -93,6 +93,7 @@ display_name() {
     zmm-concentration)  echo "詹明明·大客户会不会跑" ;;
     zmm-dependency)     echo "詹明明·这生意靠谁" ;;
     zmm-decide)         echo "詹明明·拿不准的时候" ;;
+    zmm-path)           echo "詹明明·从哪儿下手" ;;
     zmm-track)          echo "詹明明·有什么到期了" ;;
     zmm-skillify)       echo "詹明明·做成一个技能" ;;
     *)                  echo "" ;;   # unknown slug: caller reports and skips

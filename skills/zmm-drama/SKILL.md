@@ -1,9 +1,9 @@
 ---
 name: zmm-drama
 description: |
-  📐 詹明明·短剧编剧 ——竖屏短剧编剧技能。给一个选题或一段初始内容，写出一个开头抓人、结尾留得住人的短剧剧本。两种产出：① 单集短剧（1–3 分钟，自成一体，账号自己就能拍）；② 付费连续剧开发包（一句话卖点 + 梗概 + 人物小传 + 整季分集大纲并标出付费卡点 + 前 3 集完整剧本）。先把冲突埋进设定里，再按「开场爆点 → 冲突 → 最大冲击 → 结尾停在问题上」切每一集；反转必须事先埋线，台词每一句都要推进冲突或露出人物。
+  📐 詹明明·短剧编剧 ——竖屏短剧编剧技能。给一个选题或一段初始内容，写出一个开头抓人、结尾留得住人的短剧剧本。两种产出：① 单集短剧（1–3 分钟，自成一体，账号自己就能拍）；② 付费连续剧开发包（一句话卖点 + 梗概 + 人物小传 + 整季分集大纲并标出付费卡点 + 前 3 集完整剧本）。先把冲突埋进设定里，再按「开场爆点 → 冲突 → 最大冲击 → 结尾停在问题上」切每一集；反转必须事先埋线，台词每一句都要推进冲突或露出人物。剧本定稿后，可选把它切成分镜表，并写成能直接交给 Seedance 生成的视频提示词（人物参考图锁长相、分段时间轴、台词节拍），出片交给 chatcut-video-gen，提交前先确认花费。
   触发方式：/zmm-drama、/短剧、/写短剧、/短剧剧本、「写个短剧」「帮我把这个写成短剧」「短剧剧本」「竖屏剧」「微短剧」「付费短剧怎么写」「写个剧情短视频」
-  Vertical short-drama screenwriting. From a premise or a rough idea to a script with an opening that grabs and an ending that holds. Two outputs: a standalone 1–3 minute episode, or a paid-series development pack (logline, synopsis, character bios, full episode outline with paywall points marked, and the first three episodes in full). Conflict is built into the premise; every episode runs opening jolt → friction → biggest hit → end on a question; every twist is planted in advance.
+  Vertical short-drama screenwriting. From a premise or a rough idea to a script with an opening that grabs and an ending that holds. Two outputs: a standalone 1–3 minute episode, or a paid-series development pack (logline, synopsis, character bios, full episode outline with paywall points marked, and the first three episodes in full). Conflict is built into the premise; every episode runs opening jolt → friction → biggest hit → end on a question; every twist is planted in advance. Optionally turns the final script into a shot list and Seedance-ready video prompts (identity-locked references, timed segments, dialogue beats), handed to chatcut-video-gen after the cost is confirmed.
   Trigger: /zmm-drama, "write a short drama", "turn this into a vertical drama", "micro-drama script", "write a paid short series"
   —— 📐 詹明明 · 不给公式，给判据。每条规则都标了实测代价。
 slug: zmm-drama
@@ -11,7 +11,7 @@ displayName: 詹明明·短剧编剧
 metadata:
   openclaw:
     emoji: 📐
-version: 0.1.0
+version: 0.2.0
 ---
 
 # zmm-drama：短剧编剧
@@ -23,7 +23,8 @@ version: 0.1.0
 本技能内置三份参考：
 - `references/编剧方法卡.md` —— 怎么切一集、怎么分一季、卡点放哪、开头六式、结尾两式、台词。**里面的数字全是经验值，按集数换算，不照抄**
 - `references/剧本格式.md` —— 两种交付的模板
-- `references/合规与原创红线.md` —— 国内备案、内容红线、原创、改编真人真事
+- `references/合规与原创红线.md` —— 国内备案、内容红线、原创、改编真人真事、AI 生成画面的标识
+- `references/分镜与生成提示词.md` —— Phase 7 用：剧本切成分镜表，再写成 Seedance 能直接用的提示词
 
 **你解决一件事：把一个选题变成一个能拍的短剧剧本，让人在第一秒停下、在最后一秒想看下一集（或者想转发）。**
 
@@ -178,7 +179,24 @@ version: 0.1.0
     2. 改结尾
     3. 单集扩成连续剧开发包 / 开发包续写第 4–6 集
     4. 拍之前念一遍计时，看时长对不对
+    5. 不自己拍，用 AI 生成画面 → 进 Phase 7
 - 记忆：用户改了哪里、为什么改，按家族公约 §六 写进 `{config.paths.memory}/zmm-drama/`
+
+---
+
+## Phase 7（可选）：转分镜与生成提示词
+
+**只在用户要「用 AI 生成画面」时做。** 剧本没定稿不做——剧本一改，分镜和提示词全部要重写。
+
+按 `references/分镜与生成提示词.md`：
+
+1. **定模型、切分镜表**（第〇、一节）：每条默认 ≤15 秒（四个模型都能跑），每段 2–5 秒、一个动作一种运镜，时长以剧本为准。先给用户看，他点头再往下
+2. **定参考图**（第三节）：每个主要人物一张，反转靠的关键道具也一张。没有就按剧本的人物说明出**非写实**定妆图（出图也花额度，进确认表），让用户确认
+3. **逐条写提示词**（第二、三、四节）：参考 → 全局 → 固定 → 时间轴 → 声音 → 约束；中文不超过 500 字。编号按这一条传图的顺序，编号后紧跟名词。画面里不生成任何文字；跨条要一致的声音后期统一加
+4. **交给 `chatcut-video-gen` 出片**（第六节）：按家族公约「归口调用」。🔴 **提交前列出条数、时长、模型，等用户确认花费**；先用便宜快的档出草稿；一次只提交他点头的那几条
+5. 交付时提醒：**发布时打开平台的 AI 生成声明**（`合规与原创红线.md` 第五节）
+
+🔴 **照实说**：提示词是按常见写法写的，本技能没有实测出片；同一条提示词每次出片会不一样，要试几次。
 
 ---
 
@@ -187,3 +205,4 @@ version: 0.1.0
 - 不一次写完 60–100 集完整剧本（写不好也改不动）
 - 不编「真实事件」：虚构就是虚构，改编真人真事按红线第四节
 - 不给「保证爆」的承诺：剧本能不能火取决于拍、演、投，剧本只负责让人停下和留下
+- 不未经确认就提交视频生成（要花钱，而且出片要一条一条看）

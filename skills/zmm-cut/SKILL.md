@@ -5,8 +5,9 @@ description: |
   🔴 **只删和重排，不加词** —— 说话人没说过的话一个字都不加。
   詹明明账号的默认参数已固化（抖音 · 保持原长 · 1.15× · HarmonyOS Sans 粗体字幕 · 黄色 #FFE20A 高亮），**不需要每次重说**；换账号只改 §一 那张表，正文流程不变。
   检测不到 ChatCut 会引导安装，并给出**本机转写旁路** —— 内容层的活全部不需要 ChatCut。
+  用户要 B-roll / 特效 / 转场而手上没有真素材时，可按文案逐句判哪几句能配生成画面（比喻、过程、氛围、转场可以；「我做过」「真实发生」这类证言绝不），写成 Seedance 提示词交给 chatcut-video-gen 出片，提交前先确认花费，发布时提醒打开 AI 生成声明。
   触发方式：/zmm-cut、/剪辑、/剪片、/zmm-剪、「把这条剪出来」「素材剪成成片」「去口癖」「加字幕」「这条视频剪一下」「重新排一下顺序」
-  Talking-head footage → publishable cut. Restructures content by copy rules (delete/reorder only, never add words), then cleans speech, speeds up, captions, B-roll. Falls back to local transcription when ChatCut is unavailable.
+  Talking-head footage → publishable cut. Restructures content by copy rules (delete/reorder only, never add words), then cleans speech, speeds up, captions, B-roll. When the user wants B-roll, effects or transitions and has no real footage, picks which lines may take generated inserts (metaphor, process, mood, transitions — never testimony) and writes Seedance prompts for chatcut-video-gen, cost confirmed first. Falls back to local transcription when ChatCut is unavailable.
   Trigger: /zmm-cut, "cut this footage", "clean up the fillers", "add captions", "reorder this"
   —— 📐 詹明明 · 不给公式，给判据。每条规则都标了实测代价。
 slug: zmm-cut
@@ -14,7 +15,7 @@ displayName: 詹明明·口播剪辑
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.0
+version: 0.4.0
 ---
 
 # zmm-cut：口播成片剪辑
@@ -49,6 +50,7 @@ version: 0.3.0
 5. 读记忆 `{vault}/08-技能记忆/zmm-cut/` + `_通用/`
 6. 🔴 **要动内容（不只是去口癖）时**，读 `references/内容层重组.md`
 7. 🔴 **第一次调 ChatCut 工具前**，读 `references/ChatCut实操.md`（三个实测踩过的工具坑）
+   + 要**生成** B-roll / 特效 / 转场时，再读 `references/生成素材.md`
 8. 🔴 **剪完之后必须回到 `口播稿输出格式.md` §四之下「上传版」** —— 见本文 §五
 
 本技能内置判据在 `references/规则卡.md`（判据 / 为什么 / 怎么查 / 强度），开工前读一遍；`{vault}` 里有对应的规则文件时以 vault 为准、规则卡为底。
@@ -100,6 +102,7 @@ version: 0.3.0
 ② 语音剪辑       → 停，确认「他实际说的」这一版对不对
 ③ 整体加速       → 停，确认节奏（倍速见 §一）
 ④ 字幕 + 高亮     → 停，让用户选高亮关键词
+④b B-roll / 生成素材（用户明确要才做）→ 停，确认配哪几句、用真素材还是生成
 ⑤ 交付           → 只有用户明确说要导出/下载才导
 ⑥ 导出后验文件本身 → 抽帧确认字幕/B-roll/打码都烧进去了
 ```
@@ -174,6 +177,18 @@ version: 0.3.0
 
 ⚠️ **不要整句高亮** —— 高亮的作用是让眼睛在滑动中停一下，整句高亮等于没高亮。
 
+### ④b B-roll / 生成素材（用户明确要才做）
+
+放在加速和字幕之后：时间轴定了，才知道每句话占几秒。
+
+1. **素材来源二选一**：用户自己的真素材（按 `references/ChatCut实操.md` §四 筛）/ 生成
+2. 要生成 → 按 `references/生成素材.md`：
+   - 逐句判能不能配生成画面。🔴 **证言类一律不配**：「我做过」「真实发生」、数据截图都算
+   - 列表给用户勾选，勾完再写提示词
+   - 交给 `chatcut-video-gen` 出片（家族公约「归口调用」）。🔴 **提交前报条数、时长、模型，等他确认花费**
+3. 出片后逐条看（乱码字、变形的手和脸、质感接不接得上），不合格的不硬用；放进时间轴后**把生成素材静音**（Seedance 一定带声音），切走长度按 `references/ChatCut实操.md` §四 剪短
+4. 🔴 **发布提醒**：打开平台的「AI 生成」声明，不去掉生成工具的水印
+
 ### ⑤ 交付
 
 🔴 **默认交付的是「可编辑的 ChatCut 时间轴」，不是 MP4。**
@@ -207,7 +222,8 @@ version: 0.3.0
 |---|---|
 | **不改内容** | 稿子拍摄时已定稿。剪辑只删不加，**不许替他补话、顺句子、改语序** |
 | **画面信息点** | 穿搭 / 桌搭 / 背景 / 墙上装饰都是信息点。**剪的时候别把有信息的画面剪掉** |
-| **不上 AI 截图** | 讲 AI 那一段的画面**不要配 AI 界面截图** —— 会把人群窄掉（`不要变成工具号`） |
+| **不上 AI 截图** | 讲 AI 那一段的画面**不要配 AI 界面截图** —— 会把人群窄掉（`不要变成工具号`）。**生成素材同理**：不生成「AI 在工作」的画面 |
+| **生成素材不作证** | AI 生成的画面只能用在比喻、过程、氛围、转场上，**不能给「我做过 / 真实发生」和任何数据作证**；发布时打开 AI 生成声明 |
 | **打大字的位置** | 稿子的「需要处理的点」里标了 ⏸ 打大字的行，**剪辑时要对上** |
 | **金额打码** | 任何出现后台数据/收款/客户信息的画面一律打码 |
 
@@ -250,6 +266,7 @@ version: 0.3.0
 - **不编 ChatCut 的功能、路径、价格、版本号** —— 会变的产品事实要去查官方 Docs 当前页
 - 不把多个 checkpoint 打包成一条回复
 - **不自作主张加背景音乐 / B-roll / MG / 转场** —— 用户没要就不做
+- **不未经确认就提交视频生成** —— 要花钱，一次只提交用户勾过的那几条
 - **不替用户选高亮关键词**
 - 不用本地 ffmpeg 压一个拍平的 MP4 当主交付物（ffmpeg 只用于只读检查源文件）
 - 不因为「剪一下」就去导出

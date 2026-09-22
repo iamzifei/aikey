@@ -137,21 +137,44 @@ for d in "$BUILD"/skills/zmm*/; do
   # version restored them). The mechanism is unclear; the behaviour is not.
   # So compute the next patch here and pass both.
   next_ver="$(next_version "$slug" "$ver")"
-  if clawhub skill publish "$d" \
-      --slug "$slug" --name "$name" --owner "$OWNER" --version "$next_ver" \
-      --changelog "$CHANGELOG" --tags latest >/tmp/clawhub_publish.log 2>&1; then
-    echo "✅"
-    ok=$((ok + 1))
-  else
-    if grep -qi "unchanged\|already exists\|no changes" /tmp/clawhub_publish.log; then
-      echo "⏭  内容未变"
-      ok=$((ok + 1))
-    else
-      echo "❌"
-      sed 's/^/      /' /tmp/clawhub_publish.log | tail -3
-      fail=$((fail + 1)); failed+=("$slug")
+
+  # "already exists" is NOT "unchanged". A version that was submitted and then
+  # blocked by moderation is hidden from `inspect`, so latestVersion stays one
+  # behind and next_version() lands on the blocked number again. 2026-09-22:
+  # zmm-cut 0.2.7 was blocked, the fixed upload computed 0.2.7 again, got
+  # "already exists", and the old branch printed 「内容未变」 and counted it as
+  # a success — the fix never shipped and the log said all green.
+  # So: bump the patch and retry; only a real no-change answer counts as a skip.
+  attempt=0
+  result=""
+  while [ $attempt -lt 5 ]; do
+    if clawhub skill publish "$d" \
+        --slug "$slug" --name "$name" --owner "$OWNER" --version "$next_ver" \
+        --changelog "$CHANGELOG" --tags latest >/tmp/clawhub_publish.log 2>&1; then
+      result="ok"; break
     fi
-  fi
+    if grep -qi "already exists" /tmp/clawhub_publish.log; then
+      next_ver="$(python3 -c "
+major, minor, patch = (int(x) for x in '$next_ver'.split('.'))
+print(f'{major}.{minor}.{patch + 1}')")"
+      attempt=$((attempt + 1))
+      continue
+    fi
+    if grep -qi "unchanged\|no changes" /tmp/clawhub_publish.log; then
+      result="skip"
+    else
+      result="fail"
+    fi
+    break
+  done
+
+  case "$result" in
+    ok)   echo "✅ $next_ver"; ok=$((ok + 1)) ;;
+    skip) echo "⏭  内容未变"; ok=$((ok + 1)) ;;
+    *)    echo "❌"
+          sed 's/^/      /' /tmp/clawhub_publish.log | tail -3
+          fail=$((fail + 1)); failed+=("$slug") ;;
+  esac
 done
 
 echo

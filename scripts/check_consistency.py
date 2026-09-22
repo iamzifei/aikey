@@ -21,7 +21,7 @@ from pathlib import Path
 
 CONTENT = {"zmm", "zmm-topic", "zmm-benchmark", "zmm-script", "zmm-title", "zmm-hook", "zmm-review",
            "zmm-flow", "zmm-cut", "zmm-retro", "zmm-post", "zmm-mvp", "zmm-resonate",
-           "zmm-concept", "zmm-skillify"}
+           "zmm-concept", "zmm-skillify", "zmm-drama"}
 
 
 def main(root: Path) -> int:
@@ -50,6 +50,15 @@ def main(root: Path) -> int:
         elif int(m.group(1)) != actual:
             problems.append(
                 f"README 写「{label}（{m.group(1)} 个技能）」，实际 {actual} 个")
+
+    # 4. every built skill got its display name injected. The MAP in
+    # build_public.sh is a second registry; zmm-path and zmm-trend shipped
+    # without it for two releases because only publish_clawhub.sh was checked.
+    for slug in skills:
+        head = (root / "skills" / slug / "SKILL.md").read_text(encoding="utf-8")[:3000]
+        if not re.search(r"^displayName:\s*\S", head, re.M):
+            problems.append(
+                f"`{slug}` 的产出 SKILL.md 没有 displayName —— build_public.sh 的中文名表漏了它")
 
     # 3. display name registered
     pub = (root / "scripts" / "publish_clawhub.sh").read_text(encoding="utf-8")

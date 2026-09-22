@@ -11,7 +11,7 @@ displayName: 詹明明
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.0
+version: 0.3.1
 ---
 
 # 詹明明：内容与生意工具箱

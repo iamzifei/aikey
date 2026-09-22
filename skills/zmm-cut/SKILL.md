@@ -3,19 +3,21 @@ name: zmm-cut
 description: |
   📐 詹明明·口播剪辑 ——口播成片剪辑技能。把拍好的素材剪成可发布的成片：**按文案规则做内容层重组**（删废镜头/去重复/重排顺序）→ 语音剪辑（去口癖/停顿）→ 加速 → 字幕 → B-roll → 交付。
   🔴 **只删和重排，不加词** —— 说话人没说过的话一个字都不加。
-  詹明明账号的默认参数已固化（抖音 · 保持原长 · 1.15× · HarmonyOS Sans 粗体字幕 · 黄色 #FFE20A 高亮），**不需要每次重说**；换账号只改 §一 那张表，正文流程不变。
+  中文口播的剪辑工作流（判据按中文口播写；用户用别的语言时照常用他的语言交流，并说明规则是按中文口播定的）。
+  默认参数（抖音 · 保持原长 · 1.15× · HarmonyOS Sans 粗体字幕 · 黄色 #FFE20A 高亮）属于詹明明账号：**确认是这个账号**才直接用；其他账号先读 `config`，读不到就问，不套用。
   检测不到 ChatCut 会引导安装，并给出**本机转写旁路** —— 内容层的活全部不需要 ChatCut。
   用户要 B-roll / 特效 / 转场而手上没有真素材时，可按文案逐句判哪几句能配生成画面（比喻、过程、氛围、转场可以；「我做过」「真实发生」这类证言绝不），写成 Seedance 提示词交给 chatcut-video-gen 出片，提交前先确认花费，发布时提醒打开 AI 生成声明。
-  触发方式：/zmm-cut、/剪辑、/剪片、/zmm-剪、「把这条剪出来」「素材剪成成片」「去口癖」「加字幕」「这条视频剪一下」「重新排一下顺序」
+  触发方式：/zmm-cut、/剪片、/zmm-剪、「把这条口播剪出来」「口播素材剪成成片」「用 zmm-cut 剪」。普通的「加字幕」「剪一下」不自动触发，先问是不是要走这套口播剪辑流程
   Talking-head footage → publishable cut. Restructures content by copy rules (delete/reorder only, never add words), then cleans speech, speeds up, captions, B-roll. When the user wants B-roll, effects or transitions and has no real footage, picks which lines may take generated inserts (metaphor, process, mood, transitions — never testimony) and writes Seedance prompts for chatcut-video-gen, cost confirmed first. Falls back to local transcription when ChatCut is unavailable.
-  Trigger: /zmm-cut, "cut this footage", "clean up the fillers", "add captions", "reorder this"
+  Chinese talking-head workflow; defaults belong to one account and are applied only after confirming it.
+  Trigger: /zmm-cut, "cut this talking-head footage with zmm-cut"
   —— 📐 詹明明 · 不给公式，给判据。每条规则都标了实测代价。
 slug: zmm-cut
 displayName: 詹明明·口播剪辑
 metadata:
   openclaw:
     emoji: 📐
-version: 0.4.0
+version: 0.4.1
 ---
 
 # zmm-cut：口播成片剪辑
@@ -66,7 +68,7 @@ version: 0.4.0
 > 用户没有说要改，就直接用；用户说了别的，以用户当次说的为准。
 >
 > ⚠️ **下表是「这一个账号」的实测值，不是通用推荐。**
-> 有 `config` 就**从 `config` 读**；读不到就用下表，并**说明用的是示例值**。
+> 有 `config` 就**从 `config` 读**；读不到就**先问是不是詹明明账号**：是才用下表，不是就逐项问，不套用。
 > 换账号 / 换题材时，正文流程照走，**只换这张表**。
 
 | 项 | 默认值 |
@@ -225,7 +227,7 @@ version: 0.4.0
 | **不上 AI 截图** | 讲 AI 那一段的画面**不要配 AI 界面截图** —— 会把人群窄掉（`不要变成工具号`）。**生成素材同理**：不生成「AI 在工作」的画面 |
 | **生成素材不作证** | AI 生成的画面只能用在比喻、过程、氛围、转场上，**不能给「我做过 / 真实发生」和任何数据作证**；发布时打开 AI 生成声明 |
 | **打大字的位置** | 稿子的「需要处理的点」里标了 ⏸ 打大字的行，**剪辑时要对上** |
-| **金额打码** | 任何出现后台数据/收款/客户信息的画面一律打码 |
+| **金额打码** | 任何出现后台数据/收款/客户信息的画面一律打码；**具体收入金额在画面、口播、字幕、标题里同一个标准，哪里都不出现**（见 `references/规则卡.md`「画面打码清单」） |
 
 ---
 

@@ -18,7 +18,7 @@
 
 [解决什么问题](#这套东西解决什么问题) · [怎么用](#怎么用) · [能力一览](#能力一览) · [怎么装](#怎么装完全没接触过-ai-也能跟着做) · [三条硬规矩](#这两套东西的共同点)
 
-![aikey 技能编排图：你说一句人话，总入口判断要哪些技能，挑 1 主 + 最多 2 辅，交付一份结果，结果再回流影响下次判断](docs/images/zmm-map.svg)
+![AI 钥匙技能编排图：你说一句人话，总入口判断要哪些技能，挑 1 主 + 最多 2 辅，交付一份结果，结果再回流影响下次判断](docs/images/aikey-map.svg)
 
 | 套件 | 给谁 | 装完你会问它 |
 |---|---|---|
@@ -255,14 +255,16 @@ npx skills add iamzifei/aikey --agent codex
 豆包会自己去这个地址下载、读 `SKILL.md`、装好之后核对版本，再告诉你装了什么。
 实测从发出到装完约一分钟。装完技能列表里就有「aikey · AI KEY · 内容与生意工具箱」：
 
-<img src="docs/images/doubao-install.gif" width="320" alt="豆包演示：发一句带地址的话，豆包自己下载安装，技能列表里出现 aikey">
+<img src="docs/images/doubao-install.gif" width="320" alt="豆包演示：发一句带地址的话，豆包自己下载安装，技能列表里出现这套工具箱">
+
+> ⚠️ 这两段演示录于改名之前，画面里显示的还是旧名字 `zmm`。**步骤和地址都没变**（旧地址会自动跳转到新仓库），装完之后你看到的是 `aikey`。
 
 > **这是固定地址，永远指向最新版。** 以后出了新版本，同样这句话再发一次就升级了，不用换链接。
 > 想看某个具体版本或更新说明，去 [Releases 页面](https://github.com/iamzifei/aikey/releases/latest)。
 
 装完直接用 —— 输入 `aikey 新手上路` 让它带你走一遍，或者直接说「今天拍什么」：
 
-<img src="docs/images/doubao-use.gif" width="320" alt="豆包演示：输入 aikey 新手上路，技能开始提问引导">
+<img src="docs/images/doubao-use.gif" width="320" alt="豆包演示：输入新手上路，技能开始提问引导">
 
 #### 手动上传（PC 版豆包 / WorkBuddy）
 

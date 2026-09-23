@@ -165,7 +165,7 @@ AI 来了我该押什么
 |---|---|
 | Claude Code · Codex · Cursor · ClawHub | **`/key`**（别名技能转进总入口）或 `/aikey` |
 | WorkBuddy | **`/key`** |
-| **豆包** | **不用敲命令** —— 在输入框选中这个技能，然后直接说你要什么（技能卡片上显示的是 `aikey-toolbox`） |
+| 豆包 | **`/key`**，后面跟一句你卡在哪；也可以在输入框选中技能卡片再说话 |
 
 平铺安装时，单个技能仍然是长名字：`/aikey-topic`、`/aikey-script`、`/aikey-review`……
 **记不住就不用记** —— 敲 `/key` 说一句你卡在哪，它替你挑。
@@ -275,7 +275,7 @@ npx skills add iamzifei/aikey --agent codex
 > **这是固定地址，永远指向最新版。** 以后出了新版本，同样这句话再发一次就升级了，不用换链接。
 > 想看某个具体版本或更新说明，去 [Releases 页面](https://github.com/iamzifei/aikey/releases/latest)。
 
-装完这么用：**在输入框选中这个技能**（会出现一个小卡片），然后直接说你要什么 —— 不用记命令：
+装完这么用：输入 **`/key`**，后面跟一句你卡在哪；也可以在输入框选中技能卡片再说话 —— 两种都行：
 
 <img src="docs/images/doubao-use.gif" width="300" alt="豆包演示：输入框里选中技能卡片，直接说「我想先获得 1 万粉丝，然后开始变现」">
 

@@ -1,11 +1,11 @@
 ---
 name: aikey-skillify
 description: |
-  📐 AI KEY·做成一个技能 ——把这次会话里已经跑通的做法固化成一个新技能。不是从想法造技能——是从**已经产生过正确结果的那一段过程**里提炼，所以只在事情做完之后用。
+  AI KEY·做成一个技能 ——把这次会话里已经跑通的做法固化成一个新技能。不是从想法造技能——是从**已经产生过正确结果的那一段过程**里提炼，所以只在事情做完之后用。
   触发方式：/aikey-skillify、/固化、/做成技能、/aikey-固化、「这次的做法留下来」「把刚才那套变成技能」「下次别再重新想一遍」「这个流程以后还要用」
   Turn a method that already worked in this session into a reusable skill. Extracts from a completed run, never from an idea — so it only fires after the work is done.
   Trigger: /aikey-skillify, "make this a skill", "save this workflow", "I don't want to re-derive this next time"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-skillify
 displayName: AI KEY·做成一个技能
 metadata:

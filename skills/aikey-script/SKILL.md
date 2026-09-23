@@ -1,11 +1,11 @@
 ---
 name: aikey-script
 description: |
-  📐 AI KEY·口播稿写作 ——口播稿协作写作技能（知识付费口播为主形态）。三类脚本选型 + 从内容单元装配 + 逐段共创，不一键成稿。
+  AI KEY·口播稿写作 ——口播稿协作写作技能（知识付费口播为主形态）。三类脚本选型 + 从内容单元装配 + 逐段共创，不一键成稿。
   触发方式：/aikey-script、/写口播、/写稿、/aikey-写稿、「写个口播稿」「帮我把这个题写出来」「知识付费口播」「写条视频文案」
   Collaborative koubo (talking-head) script writing: script-type selection, unit assembly, section-by-section co-writing.
   Trigger: /aikey-script, "write a talking-head script", "turn this topic into a video script"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-script
 displayName: AI KEY·口播稿写作
 metadata:

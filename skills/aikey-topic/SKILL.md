@@ -1,11 +1,11 @@
 ---
 name: aikey-topic
 description: |
-  📐 AI KEY·今天拍什么 ——短视频选题技能。先探寻现象、检验假设、比较解释，把问题转成观众在意的选择。交互式选题：供需判定 + 对标信号 + 本人真实数据佐证 + 配比检查，不一键生成选题清单。
+  AI KEY·今天拍什么 ——短视频选题技能。先探寻现象、检验假设、比较解释，把问题转成观众在意的选择。交互式选题：供需判定 + 对标信号 + 本人真实数据佐证 + 配比检查，不一键生成选题清单。
   触发方式：/aikey-topic、/拍什么、/选题、/aikey-选题、「今天拍什么」「帮我出选题」「这个题能不能做」「有个想法你帮我判断下」「这题只有一头」「这题没劲」「帮我把它讲出两头来」
   Topic selection for short videos: supply-demand test, benchmark signals, real data evidence.
   Trigger: /aikey-topic, "what topic should I shoot", "is this topic worth making"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-topic
 displayName: AI KEY·今天拍什么
 metadata:

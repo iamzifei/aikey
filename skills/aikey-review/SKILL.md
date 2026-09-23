@@ -1,11 +1,11 @@
 ---
 name: aikey-review
 description: |
-  📐 AI KEY·发布前审一遍 ——口播稿发布前审核技能。按观众的四次决定审：点不点进来 · 留不留下来 · 记不记得你 · 做不做点什么。逐句信息密度评分（60/80 分线）+ 十一问 + 红线五查（改法给稳妥版和保留力度版两版）+ 机器信号层（导流 / 广告形状 / 名单词，与内容违规分开报），默认只诊断不改。
+  AI KEY·发布前审一遍 ——口播稿发布前审核技能。按观众的四次决定审：点不点进来 · 留不留下来 · 记不记得你 · 做不做点什么。逐句信息密度评分（60/80 分线）+ 十一问 + 红线五查（改法给稳妥版和保留力度版两版）+ 机器信号层（导流 / 广告形状 / 名单词，与内容违规分开报），默认只诊断不改。
   触发方式：/aikey-review、/能不能发、/审核、/aikey-审核、「这稿子能不能发」「帮我审一下」「过一遍红线」「信息密度够不够」
   Pre-publish review for talking-head scripts, organised around the viewer's four decisions: click, stay, remember, act. Per-sentence density scoring, eleven questions, red-line audit. Diagnose-only by default.
   Trigger: /aikey-review, "can I publish this", "review my script"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-review
 displayName: AI KEY·发布前审一遍
 metadata:

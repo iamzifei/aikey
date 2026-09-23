@@ -1,11 +1,11 @@
 ---
 name: aikey-flow
 description: |
-  📐 AI KEY·哪里会被划走 ——口播稿「划走点」专项。替观众把稿子听一遍：每一拍观众手里有什么、在等什么，断在哪一拍 —— 等的没来、手里有了还在给、正在给的听不清。诊断完默认主动问是否标记式改稿。
+  AI KEY·哪里会被划走 ——口播稿「划走点」专项。替观众把稿子听一遍：每一拍观众手里有什么、在等什么，断在哪一拍 —— 等的没来、手里有了还在给、正在给的听不清。诊断完默认主动问是否标记式改稿。
   触发方式：/aikey-flow、/会不会划走、/顺稿、/aikey-顺稿、「这稿子顺不顺」「哪里会划走」「逻辑有没有断」「读起来卡不卡」「完播会不会掉」
   Drop-off check for talking-head scripts: walk the script as a listener, beat by beat — what the viewer holds, what they are waiting for, and where that chain breaks.
   Trigger: /aikey-flow, "does this script flow", "where will viewers drop off", "check retention risk"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-flow
 displayName: AI KEY·哪里会被划走
 metadata:

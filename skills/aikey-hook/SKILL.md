@@ -1,11 +1,11 @@
 ---
 name: aikey-hook
 description: |
-  📐 AI KEY·开头前五秒 ——短视频开头专项技能。先诊断内容有没有货（门禁），再比较真实材料入口与大众悬念入口，结合起手与留白出候选，每个候选标注用了哪个原理。
+  AI KEY·开头前五秒 ——短视频开头专项技能。先诊断内容有没有货（门禁），再比较真实材料入口与大众悬念入口，结合起手与留白出候选，每个候选标注用了哪个原理。
   触发方式：/aikey-hook、/钩子、/开头、/aikey-开头、「开头怎么写」「前五秒抓不住人」「帮我想几个钩子」「这个开头行不行」
   Opening-hook specialist: gate-check content first, then generate hooks by expectation forms and information-gap methods.
   Trigger: /aikey-hook, "how to write the opening", "give me some hooks"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-hook
 displayName: AI KEY·开头前五秒
 metadata:

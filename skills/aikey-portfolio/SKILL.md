@@ -1,11 +1,11 @@
 ---
 name: aikey-portfolio
 description: |
-  📐 AI KEY·该投哪条线 ——多产品线组合体检。几条线放在一起看，钱和时间该往哪投、哪条该收、哪条该砍。强制瓶颈资源守恒——先定这门生意真正卡住的是什么（时间/现金/产能/铺位/库存），任何「加码」都必须说清那份资源从哪条线抽出来。覆盖线上、知识付费、电商、直播、餐饮零售、工厂。
+  AI KEY·该投哪条线 ——多产品线组合体检。几条线放在一起看，钱和时间该往哪投、哪条该收、哪条该砍。强制瓶颈资源守恒——先定这门生意真正卡住的是什么（时间/现金/产能/铺位/库存），任何「加码」都必须说清那份资源从哪条线抽出来。覆盖线上、知识付费、电商、直播、餐饮零售、工厂。
   触发方式：/aikey-portfolio、/该投哪个、/组合体检、「几条线怎么分配」「该投哪个产品」「这条线还要不要做」「时间不够用」「哪条该砍」
   Portfolio checkup for operators running several lines at once — online, info-products, e-commerce, live-selling, restaurants/retail, or factories. Identifies the real binding constraint per business type, then allocates it with a hard conservation rule: every "invest more" must name where that resource comes from.
   Trigger: /aikey-portfolio, "which product should I focus on", "should I kill this line", "spread too thin"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-portfolio
 displayName: AI KEY·该投哪条线
 metadata:

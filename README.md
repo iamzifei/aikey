@@ -1,4 +1,4 @@
-# 📐 AI KEY
+# AI KEY
 
 > 不给公式，给判据。每条规则都标了实测代价。
 
@@ -18,8 +18,8 @@
 
 | 套件 | 给谁 | 装完你会问它 |
 |---|---|---|
-| **📐 AI KEY·内容操盘手** | 一个人自采自编的知识型创作者 | 「今天拍什么」「这稿子能不能发」「哪里会被划走」 |
-| **📐 AI KEY·小老板看盘** | 同时跑几条线的生意负责人 | 「这个月钱去哪了」「大客户会不会跑」「该投哪条线」 |
+| **AI KEY·内容操盘手** | 一个人自采自编的知识型创作者 | 「今天拍什么」「这稿子能不能发」「哪里会被划走」 |
+| **AI KEY·小老板看盘** | 同时跑几条线的生意负责人 | 「这个月钱去哪了」「大客户会不会跑」「该投哪条线」 |
 
 技能名就是你嘴里的那句话 —— 不用记英文，不用懂技术。
 **套件名和技能名两层都带 `AI KEY·` 前缀** —— 套件 tab 里认得出，
@@ -153,21 +153,29 @@ AI 来了我该押什么
 
 ---
 
-## ⚠️ 这套技能要改名了：詹明明 → AI KEY
+## 老用户升级：zmm 已改名为 AI KEY
 
-下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，公开仓库地址也会跟着变。**旧名字不再更新。**
+从 v1.0.0 起，这套技能叫 **AI KEY**：命令由 `/zmm-…` 改成 `/aikey-…`，仓库地址由 `iamzifei/zmm` 改成 `iamzifei/aikey`。**旧名字不再更新。**
 
-**Claude Code / Codex / Cursor 用户**，改名完成后执行两步：
+**Claude Code / Codex / Cursor**
 
 ```bash
 npx skills remove -g                      # 在列表里勾掉 zmm 开头的那些
 npx skills add iamzifei/aikey -g --all    # 装新的
 ```
 
-**豆包 / WorkBuddy**：下载地址不变，把同一个地址再发一次就是新版。
-**ClawHub**：`npx clawhub install iamzifei/aikey-topic`（其余技能同理，把 `zmm-` 换成 `aikey-`）。
+> 🔴 `npx skills update` **帮不了你**。改名之后旧名字在仓库里已经不存在，它只会提示「上游好像删掉了这些技能」然后跳过，既不会换名字，也不会装新的。所以必须手动走上面两步。
 
-> 为什么要提前告诉你：改名之后，旧名字在仓库里就不存在了，`npx skills update` 只会提示「上游好像删掉了这些技能」，**不会自动帮你装上新的**。所以要手动走上面两步。
+**豆包 / WorkBuddy**：下载地址照旧能用，把同一个地址再发一次就是新版。新地址也可以：
+`https://github.com/iamzifei/aikey/releases/latest/download/aikey-toolbox.zip`
+
+**ClawHub**：`npx clawhub install iamzifei/aikey-topic`（其余技能把 `zmm-` 换成 `aikey-`）。旧条目已隐藏，装不动了。
+
+**SkillHub**：搜「AI KEY」装新条目。旧条目最后发的那一版内容和新版一样，能继续用，但以后不再更新。
+
+### 旧链接会不会断
+
+不会。仓库改名后 GitHub 会自动跳转，旧的下载地址和旧的 git 地址都实测可用；下载包同时提供 `aikey-toolbox.zip` 和原来的 `zmm-toolbox.zip` 两个名字，已经写进文章或录进视频的链接不受影响。
 
 ---
 
@@ -343,7 +351,7 @@ cp config.example.yaml config.yaml
 
 ---
 
-## 📐 AI KEY·内容操盘手（16 个技能）
+## AI KEY·内容操盘手（16 个技能）
 
 给单人自采自编的知识型创作者。**主路径只有三步：**
 
@@ -397,7 +405,7 @@ cp config.example.yaml config.yaml
 
 ---
 
-## 📐 AI KEY·小老板看盘（9 个技能）
+## AI KEY·小老板看盘（9 个技能）
 
 给**同时跑多条线的生意负责人**——开店的、做工厂的、带团队做 2B 的、做知识付费和电商直播的。
 

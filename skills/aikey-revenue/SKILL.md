@@ -1,11 +1,11 @@
 ---
 name: aikey-revenue
 description: |
-  📐 AI KEY·这个月钱去哪了 ——营收异动归因。这个月钱少了（或多了），到底是客人变少、每人买得少、还是单价变了——三种原因的处理动作完全相反，分不清就会做反。也识别「静默侵蚀」：每个月只跌一点点、单月都像正常波动，累计起来致命。
+  AI KEY·这个月钱去哪了 ——营收异动归因。这个月钱少了（或多了），到底是客人变少、每人买得少、还是单价变了——三种原因的处理动作完全相反，分不清就会做反。也识别「静默侵蚀」：每个月只跌一点点、单月都像正常波动，累计起来致命。
   触发方式：/aikey-revenue、/钱去哪了、/营收归因、「这个月为什么少了」「营收掉了」「钱去哪了」「生意怎么突然不行了」「涨了但我不知道为什么」
   Revenue movement attribution for owner-operators. Splits any change into customer count × per-customer volume × price, so the right fix follows. Also detects slow erosion that hides inside monthly noise. Works from a ledger or order book — no dashboard required.
   Trigger: /aikey-revenue, "why is revenue down this month", "where did the money go", "business suddenly slowed"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-revenue
 displayName: AI KEY·这个月钱去哪了
 metadata:

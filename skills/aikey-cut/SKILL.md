@@ -1,7 +1,7 @@
 ---
 name: aikey-cut
 description: |
-  📐 AI KEY·口播剪辑 ——口播成片剪辑技能。把拍好的素材剪成可发布的成片：**按文案规则做内容层重组**（删废镜头/去重复/重排顺序）→ 语音剪辑（去口癖/停顿）→ 加速 → 字幕 → B-roll → 交付。
+  AI KEY·口播剪辑 ——口播成片剪辑技能。把拍好的素材剪成可发布的成片：**按文案规则做内容层重组**（删废镜头/去重复/重排顺序）→ 语音剪辑（去口癖/停顿）→ 加速 → 字幕 → B-roll → 交付。
   🔴 **只删和重排，不加词** —— 说话人没说过的话一个字都不加。
   中文口播的剪辑工作流（判据按中文口播写；用户用别的语言时照常用他的语言交流，并说明规则是按中文口播定的）。
   默认参数（抖音 · 保持原长 · 1.15× · HarmonyOS Sans 粗体字幕 · 黄色 #FFE20A 高亮）属于澳洲AI教父账号：**确认是这个账号**才直接用；其他账号先读 `config`，读不到就问，不套用。
@@ -11,7 +11,7 @@ description: |
   Talking-head footage → publishable cut. Restructures content by copy rules (delete/reorder only, never add words), then cleans speech, speeds up, captions, B-roll. When the user wants B-roll, effects or transitions and has no real footage, picks which lines may take generated inserts (metaphor, process, mood, transitions — never testimony) and writes Seedance prompts for chatcut-video-gen, cost confirmed first. Falls back to local transcription when ChatCut is unavailable.
   Chinese talking-head workflow; defaults belong to one account and are applied only after confirming it.
   Trigger: /aikey-cut, "cut this talking-head footage with aikey-cut"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-cut
 displayName: AI KEY·口播剪辑
 metadata:

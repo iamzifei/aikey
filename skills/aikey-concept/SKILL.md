@@ -1,11 +1,11 @@
 ---
 name: aikey-concept
 description: |
-  📐 AI KEY·重讲一个概念 ——重讲一个大家都在用的概念（定价 / 选题 / 需求 / 转化 / 获客…）——拆开它，从裂缝里长出一把尺子。先锁四样再写稿，最后由本人口述定稿。
+  AI KEY·重讲一个概念 ——重讲一个大家都在用的概念（定价 / 选题 / 需求 / 转化 / 获客…）——拆开它，从裂缝里长出一把尺子。先锁四样再写稿，最后由本人口述定稿。
   触发方式：/aikey-concept、/重讲概念、「把 XX 这个概念讲清楚」「XX 到底是什么」「为什么 XX 越 YY 越 ZZ」「掰开揉碎讲一个概念」
   Re-explain a concept the audience already uses: crack it open, hand them a ruler. Lock four things before drafting; final version comes from the host's own spoken take.
   Trigger: /aikey-concept, "explain X properly", "why does more X lead to less Y"
-  —— 📐 AI KEY · 不给公式，给判据。每条规则都标了实测代价。
+  —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-concept
 displayName: AI KEY·重讲一个概念
 metadata:

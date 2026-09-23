@@ -20,6 +20,14 @@ PREFIX = os.environ.get("SKILL_PREFIX", "aikey")
 # hangs off this one, not off the skill names.
 REPO = os.environ.get("SKILL_REPO", "aikey")
 
+# The command the BUNDLE registers on WorkBuddy / SkillHub / 豆包. Short on
+# purpose: there the whole box is one skill, so this is the only thing a user
+# types, and `aikey` was measured as too long to bother with. Deliberately
+# separate from PREFIX — the flat distribution keeps `aikey-*`, where a bare
+# `key` would collide with everything else in a shared skills folder.
+BUNDLE_CMD = os.environ.get("SKILL_BUNDLE_CMD", "key")
+
+
 
 def member(suffix: str) -> str:
     """`member("topic")` → `aikey-topic`; `member("")` → the hub itself."""

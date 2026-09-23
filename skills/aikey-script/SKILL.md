@@ -14,18 +14,7 @@ metadata:
 version: 0.4.1
 ---
 
-> ⚠️ **这套技能要改名了：詹明明 → AI KEY。**
-> 下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，**旧名字不再更新**。
-> 改名完成后，升级两步：
->
-> ```bash
-> npx skills remove -g                      # 勾掉 aikey 开头的那些
-> npx skills add iamzifei/aikey -g --all    # 装新的
-> ```
->
-> 豆包 / WorkBuddy：下载地址不变，把同一个地址再发一次就是新版。
-> ClawHub：`npx clawhub install iamzifei/aikey-<后缀>`（例：`aikey-topic`）。
-
+> 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
 # aikey-script：口播写稿
 
 **搭新骨架或需要理论支撑时**，读 `aikey/references/理论框架选型与装配.md`，复用选题阶段的卡片，把「段落问题 → 本人素材 → 理论作用 → 边界 → 读者疑问」并入 Phase 2 装配表。解释内容与设计讲法分开，经典核实仍按下方第 7 项，不增加确认轮次。用户明确要长文兼口播时保留长文容量，不套短稿长度或强制改成教程。

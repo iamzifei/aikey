@@ -14,18 +14,7 @@ metadata:
 version: 0.1.1
 ---
 
-> ⚠️ **这套技能要改名了：詹明明 → AI KEY。**
-> 下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，**旧名字不再更新**。
-> 改名完成后，升级两步：
->
-> ```bash
-> npx skills remove -g                      # 勾掉 aikey 开头的那些
-> npx skills add iamzifei/aikey -g --all    # 装新的
-> ```
->
-> 豆包 / WorkBuddy：下载地址不变，把同一个地址再发一次就是新版。
-> ClawHub：`npx clawhub install iamzifei/aikey-<后缀>`（例：`aikey-topic`）。
-
+> 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
 # aikey-post：公众号贴图短文
 
 先读 `aikey/references/家族公约.md`（读不到 → 明说「公约读不到，红线无法保证」并停下，**不凭记忆代替公约**），再读 `aikey/references/交互规范.md`（🔴 **不是读一遍就算**：收尾按 §四 三件套 —— Recap · Before/After · **下一步给编号选项**；缺信息按 §四 用**选择题**问，**一次只问一个**；不适用的情况见 §五），再读记忆 `{vault}/08-技能记忆/aikey-post/` + `_通用/`，理论出处见 `aikey/references/内容理论底座.md`（跟用户说话时只说人话，不说理论名）。

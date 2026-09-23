@@ -14,18 +14,7 @@ metadata:
 version: 0.4.3
 ---
 
-> ⚠️ **这套技能要改名了：詹明明 → AI KEY。**
-> 下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，**旧名字不再更新**。
-> 改名完成后，升级两步：
->
-> ```bash
-> npx skills remove -g                      # 勾掉 aikey 开头的那些
-> npx skills add iamzifei/aikey -g --all    # 装新的
-> ```
->
-> 豆包 / WorkBuddy：下载地址不变，把同一个地址再发一次就是新版。
-> ClawHub：`npx clawhub install iamzifei/aikey-<后缀>`（例：`aikey-topic`）。
-
+> 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
 # aikey-review：审核
 
 **稿件使用理论框架时**，按 `aikey/references/理论框架选型与装配.md` §1、§4–6 核对：理论支持哪一步、前提是否满足、反例或让步是否遗漏、讲法启发是否被冒充事实。并入原有引用／逻辑检查，不新增门槛；诊断授权不因此变成改写。

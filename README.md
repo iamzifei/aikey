@@ -296,7 +296,7 @@ npx skills add iamzifei/aikey --agent codex
 
 ### 方式四：从技能市场装（WorkBuddy / OpenClaw 用户）
 
-技能已上架 ClawHub，搜 **`詹明明`** 就能找到，也可以直接装：
+技能已上架 ClawHub，搜 **`AI KEY`** 就能找到，也可以直接装：
 
 ```bash
 npx clawhub install iamzifei/aikey          # 总入口
@@ -305,7 +305,7 @@ npx clawhub install iamzifei/aikey-topic    # 单个技能
 
 全部 25 个在 **https://clawhub.ai/@iamzifei**。
 
-WorkBuddy 用户在「专家·技能·连接器」里搜 `詹明明` 即可一键安装。
+WorkBuddy 用户在「专家·技能·连接器」里搜 `AI KEY` 即可一键安装。
 
 ### 方式五：WorkBuddy 手动导入（不想敲命令）
 

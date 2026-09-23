@@ -11,7 +11,7 @@ until now; this script does.
 
 What it checks
   1. config.paths.* — every value resolves to an existing file or directory
-     under vault_root (repo-relative entries such as zmm-*/references/… are
+     under vault_root (repo-relative entries such as aikey-*/references/… are
      checked against the repo instead).
   2. Every backtick path in the covenant's §一 table — same resolution rules;
      `config.paths.<key> → default` rows use the config value when set.
@@ -33,8 +33,10 @@ import re
 import sys
 from pathlib import Path
 
+from skillprefix import PREFIX
+
 REPO = Path(__file__).resolve().parent.parent
-COVENANT = REPO / "zmm" / "references" / "家族公约.md"
+COVENANT = REPO / PREFIX / "references" / "家族公约.md"
 
 
 # --------------------------------------------------------------------------- config
@@ -99,7 +101,7 @@ def covenant_entries(text: str):
 
 
 def is_repo_relative(p: str) -> bool:
-    return p.startswith(("zmm/", "zmm-")) or p == "zmm"
+    return p.startswith((f"{PREFIX}/", f"{PREFIX}-")) or p == PREFIX
 
 
 def resolve(p: str, vault: Path) -> Path:
@@ -173,7 +175,7 @@ def main() -> int:
         candidates = [paths[key]] if (key and paths.get(key)) else ticks
         for p in candidates:
             target = resolve(p, vault)
-            # a wildcard row (`zmm-*/references/规则卡.md`) passes when it matches at least one file
+            # a wildcard row (`aikey-*/references/规则卡.md`) passes when it matches at least one file
             if "*" in p:
                 base = REPO if is_repo_relative(p) else vault
                 if any(base.glob(p)):

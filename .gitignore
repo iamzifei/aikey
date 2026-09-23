@@ -2,6 +2,3 @@
 config.yaml
 
 .DS_Store
-
-# 公开树里的 check_* 脚本一运行就会生成，不该进仓
-__pycache__/

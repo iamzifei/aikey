@@ -1,4 +1,4 @@
-# zmm 内容系统 · 配置模板
+# aikey 内容系统 · 配置模板
 #
 # 复制成 config.yaml 后填自己的值。技能只读 config.yaml，本体不含任何实例值。
 # 读不到 config.yaml 时技能会降级并说明缺什么 —— 不会拿默认值假装是你的设定。
@@ -132,16 +132,16 @@ platforms:
 # 5. 数据与落盘（全部相对于 vault_root；留空则回退到当前工作目录并提醒一次）
 # ─────────────────────────────────────────────────────────────
 paths:
-  vault_root: ""                 # 留空 = 用当前工作目录，并提醒你一次（见 zmm/references/家族公约.md §一）
+  vault_root: ""                 # 留空 = 用当前工作目录，并提醒你一次（见 aikey/references/家族公约.md §一）
   drafts: "_草稿"
   published: "_已发布"
   topic_pipeline: "06-选题装配/选题管道.md"
   test_pipeline: "06-选题装配/X测试管道.md"
-  benchmark: "01-原始素材区"    # zmm-benchmark 扒下来的对标账号落在这里
+  benchmark: "01-原始素材区"    # aikey-benchmark 扒下来的对标账号落在这里
   memory: "08-技能记忆"
-  tracking: "09-在途"        # zmm-track 的存放位置(承诺/到期/监测/在途/队列)
-  empirical: "zmm/references/实证规律库.md"
-  scoring_anchors: "zmm-review/references/评分锚点.md"
+  tracking: "09-在途"        # aikey-track 的存放位置(承诺/到期/监测/在途/队列)
+  empirical: "aikey/references/实证规律库.md"
+  scoring_anchors: "aikey-review/references/评分锚点.md"
   voice: "00-规则与索引/语言风格档案.md"              # 出稿前必读，管「像不像你说话」
   format: "00-规则与索引/日更口播稿模板与钩子库.md"    # 长度 / 前 N 秒 / 钩子库 / 整稿迭代流程
   feedback_rules: "docs/文案反馈规则库/00-规则总表.md" # 从真实改稿反馈长出来的细则，冲突时以它为准

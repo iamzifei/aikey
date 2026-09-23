@@ -20,17 +20,18 @@ set -euo pipefail
 
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OWNER="${CLAWHUB_OWNER:-iamzifei}"     # publisher handle; skills appear as @iamzifei/<slug>
-                                       # 2026-09-01: moved off the @zmm org so the ClawHub
+                                       # 2026-09-01: moved off the @aikey org so the ClawHub
                                        # handle matches the GitHub handle SkillHub links to.
                                        # Search still finds everything — ClawHub matches the
-                                       # slug (zmm-*), not the owner.
+                                       # slug (aikey-*), not the owner.
 CHANGELOG="${CLAWHUB_CHANGELOG:-更新}"  # CI passes the commit message
 ONLY="${CLAWHUB_ONLY:-}"               # optional comma-separated slug allowlist
 BUILD="${1:-}"
 DRY=0
 for a in "$@"; do [ "$a" = "--dry-run" ] && DRY=1; done
 [ "${BUILD:-}" = "--dry-run" ] && BUILD=""
-BUILD="${BUILD:-$SRC/../zmm-clawhub}"
+PREFIX="${SKILL_PREFIX:-aikey}"   # 技能族前缀，改名时改这里
+BUILD="${BUILD:-$SRC/../${PREFIX}-clawhub}"
 
 if [ ! -d "$BUILD" ]; then
   echo "❌ 构建目录不存在：$BUILD"
@@ -73,38 +74,38 @@ print(f'{major}.{minor}.{patch + 1}')"
 
 display_name() {
   case "$1" in
-    zmm)                echo "詹明明" ;;
-    zmm-topic)          echo "詹明明·今天拍什么" ;;
-    zmm-benchmark)      echo "詹明明·找对标" ;;
-    zmm-script)         echo "詹明明·口播稿写作" ;;
-    zmm-title)          echo "詹明明·标题与封面" ;;
-    zmm-hook)           echo "詹明明·开头前五秒" ;;
-    zmm-review)         echo "詹明明·发布前审一遍" ;;
-    zmm-flow)           echo "詹明明·哪里会被划走" ;;
-    zmm-cut)            echo "詹明明·口播剪辑" ;;
-    zmm-retro)          echo "詹明明·发布后复盘" ;;
-    zmm-post)           echo "詹明明·公众号短文" ;;
-    zmm-mvp)            echo "詹明明·选题先试水" ;;
-    zmm-resonate)       echo "詹明明·戳不戳得中人" ;;
-    zmm-concept)        echo "詹明明·重讲一个概念" ;;
-    zmm-product)        echo "詹明明·我该卖什么" ;;
-    zmm-portfolio)      echo "詹明明·该投哪条线" ;;
-    zmm-revenue)        echo "詹明明·这个月钱去哪了" ;;
-    zmm-concentration)  echo "詹明明·大客户会不会跑" ;;
-    zmm-dependency)     echo "詹明明·这生意靠谁" ;;
-    zmm-decide)         echo "詹明明·拿不准的时候" ;;
-    zmm-path)           echo "詹明明·从哪儿下手" ;;
-    zmm-trend)          echo "詹明明·风口在哪" ;;
-    zmm-drama)          echo "詹明明·短剧编剧" ;;
-    zmm-track)          echo "詹明明·有什么到期了" ;;
-    zmm-skillify)       echo "詹明明·做成一个技能" ;;
+    aikey)                echo "AI KEY" ;;
+    aikey-topic)          echo "AI KEY·今天拍什么" ;;
+    aikey-benchmark)      echo "AI KEY·找对标" ;;
+    aikey-script)         echo "AI KEY·口播稿写作" ;;
+    aikey-title)          echo "AI KEY·标题与封面" ;;
+    aikey-hook)           echo "AI KEY·开头前五秒" ;;
+    aikey-review)         echo "AI KEY·发布前审一遍" ;;
+    aikey-flow)           echo "AI KEY·哪里会被划走" ;;
+    aikey-cut)            echo "AI KEY·口播剪辑" ;;
+    aikey-retro)          echo "AI KEY·发布后复盘" ;;
+    aikey-post)           echo "AI KEY·公众号短文" ;;
+    aikey-mvp)            echo "AI KEY·选题先试水" ;;
+    aikey-resonate)       echo "AI KEY·戳不戳得中人" ;;
+    aikey-concept)        echo "AI KEY·重讲一个概念" ;;
+    aikey-product)        echo "AI KEY·我该卖什么" ;;
+    aikey-portfolio)      echo "AI KEY·该投哪条线" ;;
+    aikey-revenue)        echo "AI KEY·这个月钱去哪了" ;;
+    aikey-concentration)  echo "AI KEY·大客户会不会跑" ;;
+    aikey-dependency)     echo "AI KEY·这生意靠谁" ;;
+    aikey-decide)         echo "AI KEY·拿不准的时候" ;;
+    aikey-path)           echo "AI KEY·从哪儿下手" ;;
+    aikey-trend)          echo "AI KEY·风口在哪" ;;
+    aikey-drama)          echo "AI KEY·短剧编剧" ;;
+    aikey-track)          echo "AI KEY·有什么到期了" ;;
+    aikey-skillify)       echo "AI KEY·做成一个技能" ;;
     *)                  echo "" ;;   # unknown slug: caller reports and skips
   esac
 }
 
 ok=0; fail=0; failed=()
 
-for d in "$BUILD"/skills/zmm*/; do
+for d in "$BUILD"/skills/"$PREFIX"*/; do
   [ -f "$d/SKILL.md" ] || continue
   slug="$(basename "${d%/}")"
 
@@ -141,7 +142,7 @@ for d in "$BUILD"/skills/zmm*/; do
   # "already exists" is NOT "unchanged". A version that was submitted and then
   # blocked by moderation is hidden from `inspect`, so latestVersion stays one
   # behind and next_version() lands on the blocked number again. 2026-09-22:
-  # zmm-cut 0.2.7 was blocked, the fixed upload computed 0.2.7 again, got
+  # aikey-cut 0.2.7 was blocked, the fixed upload computed 0.2.7 again, got
   # "already exists", and the old branch printed 「内容未变」 and counted it as
   # a success — the fix never shipped and the log said all green.
   # So: bump the patch and retry; only a real no-change answer counts as a skip.

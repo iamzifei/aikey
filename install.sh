@@ -37,7 +37,7 @@ mkdir -p "$TARGET"
 
 n=0
 # Skills live under skills/ so skills.sh can discover this repo.
-for d in "$REPO"/skills/zmm*/; do
+for d in "$REPO"/skills/"${SKILL_PREFIX:-aikey}"*/; do
   [ -f "$d/SKILL.md" ] || continue
   name="$(basename "$d")"
   ln -sfn "${d%/}" "$TARGET/$name"

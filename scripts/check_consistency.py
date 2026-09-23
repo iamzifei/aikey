@@ -19,9 +19,14 @@ import re
 import sys
 from pathlib import Path
 
-CONTENT = {"zmm", "zmm-topic", "zmm-benchmark", "zmm-script", "zmm-title", "zmm-hook", "zmm-review",
-           "zmm-flow", "zmm-cut", "zmm-retro", "zmm-post", "zmm-mvp", "zmm-resonate",
-           "zmm-concept", "zmm-skillify", "zmm-drama"}
+from skillprefix import member
+
+# The content half of the family, by suffix — the prefix comes from skillprefix,
+# so a rename touches one line there instead of sixteen here.
+CONTENT_SUFFIXES = {"", "topic", "benchmark", "script", "title", "hook", "review",
+                    "flow", "cut", "retro", "post", "mvp", "resonate",
+                    "concept", "skillify", "drama"}
+CONTENT = {member(s) for s in CONTENT_SUFFIXES}
 
 
 def main(root: Path) -> int:

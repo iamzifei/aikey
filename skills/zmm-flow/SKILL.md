@@ -11,8 +11,20 @@ displayName: 詹明明·哪里会被划走
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.1
+version: 0.3.2
 ---
+
+> ⚠️ **这套技能要改名了：詹明明 → AI KEY。**
+> 下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，**旧名字不再更新**。
+> 改名完成后，升级两步：
+>
+> ```bash
+> npx skills remove -g                      # 勾掉 zmm 开头的那些
+> npx skills add iamzifei/aikey -g --all    # 装新的
+> ```
+>
+> 豆包 / WorkBuddy：下载地址不变，把同一个地址再发一次就是新版。
+> ClawHub：`npx clawhub install iamzifei/aikey-<后缀>`（例：`aikey-topic`）。
 
 # zmm-flow：替观众听一遍
 

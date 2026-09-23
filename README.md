@@ -153,6 +153,24 @@ AI 来了我该押什么
 
 ---
 
+## ⚠️ 这套技能要改名了：詹明明 → AI KEY
+
+下一版（v1.0.0）起，命令从 `/zmm-…` 变成 `/aikey-…`，公开仓库地址也会跟着变。**旧名字不再更新。**
+
+**Claude Code / Codex / Cursor 用户**，改名完成后执行两步：
+
+```bash
+npx skills remove -g                      # 在列表里勾掉 zmm 开头的那些
+npx skills add iamzifei/aikey -g --all    # 装新的
+```
+
+**豆包 / WorkBuddy**：下载地址不变，把同一个地址再发一次就是新版。
+**ClawHub**：`npx clawhub install iamzifei/aikey-topic`（其余技能同理，把 `zmm-` 换成 `aikey-`）。
+
+> 为什么要提前告诉你：改名之后，旧名字在仓库里就不存在了，`npx skills update` 只会提示「上游好像删掉了这些技能」，**不会自动帮你装上新的**。所以要手动走上面两步。
+
+---
+
 ## 这两套东西的共同点
 
 市面上不缺内容生成器，也不缺商业框架。这两套的区别在三条硬规矩：

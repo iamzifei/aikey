@@ -30,7 +30,8 @@ BUILD="${1:-}"
 DRY=0
 for a in "$@"; do [ "$a" = "--dry-run" ] && DRY=1; done
 [ "${BUILD:-}" = "--dry-run" ] && BUILD=""
-PREFIX="${SKILL_PREFIX:-aikey}"   # 技能族前缀，改名时改这里
+PREFIX="${SKILL_PREFIX:-aikey}"
+ALIASES="${SKILL_ALIASES:-key}"   # 技能族前缀，改名时改这里
 BUILD="${BUILD:-$SRC/../${PREFIX}-clawhub}"
 
 if [ ! -d "$BUILD" ]; then
@@ -75,6 +76,7 @@ print(f'{major}.{minor}.{patch + 1}')"
 display_name() {
   case "$1" in
     aikey)                echo "AI KEY" ;;
+    key)              echo "AI KEY·短命令" ;;
     aikey-topic)          echo "AI KEY·今天拍什么" ;;
     aikey-benchmark)      echo "AI KEY·找对标" ;;
     aikey-script)         echo "AI KEY·口播稿写作" ;;
@@ -105,7 +107,7 @@ display_name() {
 
 ok=0; fail=0; failed=()
 
-for d in "$BUILD"/skills/"$PREFIX"*/; do
+for d in "$BUILD"/skills/"$PREFIX"*/ $(for a in $ALIASES; do [ -d "$BUILD/skills/$a" ] && echo "$BUILD/skills/$a/"; done); do
   [ -f "$d/SKILL.md" ] || continue
   slug="$(basename "${d%/}")"
 

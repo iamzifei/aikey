@@ -12,7 +12,7 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2T024VDBG)
 
 **两套中文 AI 技能，一共 25 个**，给一个人干活的知识型创作者和小生意负责人。
-你用人话说卡在哪，它挑对的那个来处理 —— **只需要记一条命令：`/aikey`**。
+你用人话说卡在哪，它挑对的那个来处理 —— **只需要记一条命令：`/key`**（`/aikey` 同样能用）。
 
 **支持**：豆包 · WorkBuddy · Claude Code · Codex · Cursor，以及其他支持 Skills 的 Agent。
 
@@ -159,6 +159,20 @@ AI 来了我该押什么
 
 ---
 
+## 两个命令，随便用哪个
+
+| 敲什么 | 在哪能用 |
+|---|---|
+| **`/key`** | 都能用。豆包 / WorkBuddy / SkillHub 的打包版直接注册它；平铺安装时由别名技能 `key` 转进总入口 |
+| `/aikey` | 平铺安装（Claude Code · Codex · Cursor · ClawHub）的总入口本名 |
+
+单个技能仍然是长名字：`/aikey-topic`、`/aikey-script`、`/aikey-review`……
+**记不住就不用记** —— 敲 `/key` 说一句你卡在哪，它替你挑。
+
+> ⚠️ `key` 这个别名只做一件事：把你交给总入口。它和 API key、密钥、密码没有任何关系。
+
+---
+
 ## 老用户升级：zmm 已改名为 AI KEY
 
 从 v1.0.0 起，这套技能叫 **AI KEY**：命令由 `/zmm-…` 改成 `/aikey-…`，仓库地址由 `iamzifei/zmm` 改成 `iamzifei/aikey`。**旧名字不再更新。**
@@ -253,18 +267,22 @@ npx skills add iamzifei/aikey --agent codex
 ```
 
 豆包会自己去这个地址下载、读 `SKILL.md`、装好之后核对版本，再告诉你装了什么。
-实测从发出到装完约一分钟。装完技能列表里就有「aikey · AI KEY · 内容与生意工具箱」：
+实测从发出到装完约一分钟。装完技能列表里就有「AI KEY · 内容与生意工具箱」：
 
 <img src="docs/images/doubao-install.gif" width="320" alt="豆包演示：发一句带地址的话，豆包自己下载安装，技能列表里出现这套工具箱">
 
-> ⚠️ 这两段演示录于改名之前，画面里显示的还是旧名字 `zmm`。**步骤和地址都没变**（旧地址会自动跳转到新仓库），装完之后你看到的是 `aikey`。
+> ⚠️ **这段演示录于改名之前**，画面里显示的还是旧名字 `zmm`，命令也还是旧的。
+> **步骤和地址没变**（旧地址会自动跳转），装完你看到的是 AI KEY，命令是 `/key`。
 
 > **这是固定地址，永远指向最新版。** 以后出了新版本，同样这句话再发一次就升级了，不用换链接。
 > 想看某个具体版本或更新说明，去 [Releases 页面](https://github.com/iamzifei/aikey/releases/latest)。
 
-装完直接用 —— 输入 `aikey 新手上路` 让它带你走一遍，或者直接说「今天拍什么」：
+装完直接用，两种都行：
 
-<img src="docs/images/doubao-use.gif" width="320" alt="豆包演示：输入新手上路，技能开始提问引导">
+```
+/key 新手指南        ← 第一次用，它问你两三个问题，拿你自己的真事跑一遍
+今天拍什么            ← 或者直接说人话，不用记命令
+```
 
 #### 手动上传（PC 版豆包 / WorkBuddy）
 

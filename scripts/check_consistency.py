@@ -19,7 +19,7 @@ import re
 import sys
 from pathlib import Path
 
-from skillprefix import member
+from skillprefix import ALIASES, member
 
 # The content half of the family, by suffix — the prefix comes from skillprefix,
 # so a rename touches one line there instead of sixteen here.
@@ -46,8 +46,11 @@ def main(root: Path) -> int:
             problems.append(f"README 没有列出技能 `{slug}`")
 
     # 2. counts match
-    n_content = sum(1 for s in skills if s in CONTENT)
-    n_biz = len(skills) - n_content
+    # Aliases forward to the hub and are not capabilities — they must still be
+    # listed in the README, but counting them would make a suite look bigger.
+    counted = [s for s in skills if s not in ALIASES]
+    n_content = sum(1 for s in counted if s in CONTENT)
+    n_biz = len(counted) - n_content
     for label, actual in (("内容操盘手", n_content), ("生意操盘手", n_biz)):
         m = re.search(rf"{label}（(\d+) 个技能）", readme)
         if not m:

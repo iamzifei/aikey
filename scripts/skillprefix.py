@@ -27,6 +27,12 @@ REPO = os.environ.get("SKILL_REPO", "aikey")
 # `key` would collide with everything else in a shared skills folder.
 BUNDLE_CMD = os.environ.get("SKILL_BUNDLE_CMD", "key")
 
+# Short-command aliases: skill folders that are NOT part of the family prefix
+# but ship with it. They only forward to the hub, so they are excluded from the
+# suite counts and from the bundle (the bundle already registers `key` itself).
+ALIASES = ("key",)
+
+
 
 
 def member(suffix: str) -> str:

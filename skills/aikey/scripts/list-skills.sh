@@ -11,7 +11,7 @@ ROOTS=("$HOME/.claude/skills" "$HOME/.agents/skills" "$(cd "$(dirname "${BASH_SO
 found=0
 for root in "${ROOTS[@]}"; do
   [ -d "$root" ] || continue
-  for d in "$root"/"$PREFIX"*/; do
+  for d in "$root"/"$PREFIX"*/ $(for a in ${SKILL_ALIASES:-key}; do [ -d "$root/$a" ] && echo "$root/$a/"; done); do
     [ -f "$d/SKILL.md" ] || continue
     name=$(basename "${d%/}")
     [ "$name" = "$PREFIX" ] && continue          # 排除入口自己

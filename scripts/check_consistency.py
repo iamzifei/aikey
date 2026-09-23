@@ -48,7 +48,7 @@ def main(root: Path) -> int:
     # 2. counts match
     n_content = sum(1 for s in skills if s in CONTENT)
     n_biz = len(skills) - n_content
-    for label, actual in (("内容操盘手", n_content), ("小老板看盘", n_biz)):
+    for label, actual in (("内容操盘手", n_content), ("生意操盘手", n_biz)):
         m = re.search(rf"{label}（(\d+) 个技能）", readme)
         if not m:
             problems.append(f"README 找不到「{label}（N 个技能）」抬头")

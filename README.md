@@ -161,12 +161,13 @@ AI 来了我该押什么
 
 ## 两个命令，随便用哪个
 
-| 敲什么 | 在哪能用 |
+| 在哪 | 怎么叫它 |
 |---|---|
-| **`/key`** | 都能用。豆包 / WorkBuddy / SkillHub 的打包版直接注册它；平铺安装时由别名技能 `key` 转进总入口 |
-| `/aikey` | 平铺安装（Claude Code · Codex · Cursor · ClawHub）的总入口本名 |
+| Claude Code · Codex · Cursor · ClawHub | **`/key`**（别名技能转进总入口）或 `/aikey` |
+| WorkBuddy | **`/key`** |
+| **豆包** | **不用敲命令** —— 在输入框选中这个技能，然后直接说你要什么（技能卡片上显示的是 `aikey-toolbox`） |
 
-单个技能仍然是长名字：`/aikey-topic`、`/aikey-script`、`/aikey-review`……
+平铺安装时，单个技能仍然是长名字：`/aikey-topic`、`/aikey-script`、`/aikey-review`……
 **记不住就不用记** —— 敲 `/key` 说一句你卡在哪，它替你挑。
 
 > ⚠️ `key` 这个别名只做一件事：把你交给总入口。它和 API key、密钥、密码没有任何关系。
@@ -269,20 +270,16 @@ npx skills add iamzifei/aikey --agent codex
 豆包会自己去这个地址下载、读 `SKILL.md`、装好之后核对版本，再告诉你装了什么。
 实测从发出到装完约一分钟。装完技能列表里就有「AI KEY · 内容与生意工具箱」：
 
-<img src="docs/images/doubao-install.gif" width="320" alt="豆包演示：发一句带地址的话，豆包自己下载安装，技能列表里出现这套工具箱">
-
-> ⚠️ **这段演示录于改名之前**，画面里显示的还是旧名字 `zmm`，命令也还是旧的。
-> **步骤和地址没变**（旧地址会自动跳转），装完你看到的是 AI KEY，命令是 `/key`。
+<img src="docs/images/doubao-install.gif" width="300" alt="豆包演示：发一句带地址的话，豆包自己下载、核对、安装，最后显示技能安装完成">
 
 > **这是固定地址，永远指向最新版。** 以后出了新版本，同样这句话再发一次就升级了，不用换链接。
 > 想看某个具体版本或更新说明，去 [Releases 页面](https://github.com/iamzifei/aikey/releases/latest)。
 
-装完直接用，两种都行：
+装完这么用：**在输入框选中这个技能**（会出现一个小卡片），然后直接说你要什么 —— 不用记命令：
 
-```
-/key 新手指南        ← 第一次用，它问你两三个问题，拿你自己的真事跑一遍
-今天拍什么            ← 或者直接说人话，不用记命令
-```
+<img src="docs/images/doubao-use.gif" width="300" alt="豆包演示：输入框里选中技能卡片，直接说「我想先获得 1 万粉丝，然后开始变现」">
+
+第一次用可以说「新手指南」，它会问你两三个问题，然后拿你自己的真事跑一遍。
 
 #### 手动上传（PC 版豆包 / WorkBuddy）
 

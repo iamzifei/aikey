@@ -35,6 +35,16 @@ on:
         type: boolean
         default: true
 
+# Runs must not overlap. Measured 2026-09-23: three pushes queued together, the
+# small one (1 skill) finished in 54s while the two big ones (25 skills each)
+# took ~10 minutes, so the LAST to finish republished its own older tree over
+# the newest content. ClawHub then served a release-old skill for half an hour.
+# Queue them instead — a later push waits, and the newest tree wins because it
+# publishes last.
+concurrency:
+  group: publish-clawhub
+  cancel-in-progress: false
+
 permissions:
   contents: read
 

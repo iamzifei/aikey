@@ -1,9 +1,9 @@
 ---
 name: aikey-flow
 description: |
-  AI KEY·哪里会被划走 ——口播稿「划走点」专项。替观众把稿子听一遍：每一拍观众手里有什么、在等什么，断在哪一拍 —— 等的没来、手里有了还在给、正在给的听不清。诊断完默认主动问是否标记式改稿。
+  AI KEY·哪里会被划走 ——口播稿「划走点」专项。替观众把稿子听一遍：每一拍观众手里有什么、在等什么，断在哪一拍 —— 等的没来、手里有了还在给、正在给的听不清。诊断完默认主动问是否标记式改稿。不负责发布红线和能不能发（→ aikey-review）、内容戳不戳人（→ aikey-resonate）、单独换开头或标题（→ aikey-hook / aikey-title）。
   触发方式：/aikey-flow、/会不会划走、/顺稿、/aikey-顺稿、「这稿子顺不顺」「哪里会划走」「逻辑有没有断」「读起来卡不卡」「完播会不会掉」
-  Drop-off check for talking-head scripts: walk the script as a listener, beat by beat — what the viewer holds, what they are waiting for, and where that chain breaks.
+  Drop-off check for talking-head scripts: walk the script as a listener, beat by beat — what the viewer holds, what they are waiting for, and where that chain breaks. Not for: red lines and publish-readiness (aikey-review), whether it resonates (aikey-resonate), replacing just the opening or title (aikey-hook / aikey-title).
   Trigger: /aikey-flow, "does this script flow", "where will viewers drop off", "check retention risk"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-flow
@@ -11,7 +11,7 @@ displayName: AI KEY·哪里会被划走
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.2
+version: 0.3.3
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。

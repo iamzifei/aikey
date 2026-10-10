@@ -1,9 +1,9 @@
 ---
 name: aikey-resonate
 description: |
-  AI KEY·戳不戳得中人 ——共鸣诊断技能。不从理论出发，从观众出发：这条内容让观众带走了哪一种收获（原来是这样 / 我就说吧 / 他替我说了），会不会动手（收藏 / 转发 / 评论 / 关注），每个判断都指到原文并标它是证据、推断还是待验证。模式A 诊断自己的草稿；模式B 拆一条别人的爆款反推可借的角度；模式C 判一句「我觉得不对劲」背后是一件事还是一群人的事。与 aikey-review 正交：review 防句废，resonate 防结构散。
+  AI KEY·戳不戳得中人 ——共鸣诊断技能。不从理论出发，从观众出发：这条内容让观众带走了哪一种收获（原来是这样 / 我就说吧 / 他替我说了），会不会动手（收藏 / 转发 / 评论 / 关注），每个判断都指到原文并标它是证据、推断还是待验证。模式A 诊断自己的草稿；模式B 拆一条别人的爆款反推可借的角度；模式C 判一句「我觉得不对劲」背后是一件事还是一群人的事。与 aikey-review 正交：review 防句废，resonate 防结构散。不负责逐句红线和能不能发（→ aikey-review）、哪一拍会划走（→ aikey-flow）、写标题或开头（→ aikey-title / aikey-hook）。
   触发方式：/aikey-resonate、/戳不戳人、/共鸣、/aikey-共鸣、「这稿有没有戳中人」「会不会没人看」「这条为什么能火」「拆一下这个爆款」「受众到底想听什么」「这事值不值得拍一条」「我总觉得哪里不对但说不上来」「这是我一个人的事还是大家的事」
-  Resonance diagnosis, audience-first: which takeaway the piece delivers, which action impulse it triggers, with every claim tied to a quoted line and labelled evidence / inference / to-verify. Mode A: your draft. Mode B: decode a hit. Mode C: test whether a hunch is one incident or a pattern.
+  Resonance diagnosis, audience-first: which takeaway the piece delivers, which action impulse it triggers, with every claim tied to a quoted line and labelled evidence / inference / to-verify. Mode A: your draft. Mode B: decode a hit. Mode C: test whether a hunch is one incident or a pattern. Not for: line-level red lines and publish-readiness (aikey-review), drop-off beats (aikey-flow), writing titles or openings (aikey-title / aikey-hook).
   Trigger: /aikey-resonate, "will this resonate", "why did this blow up", "decode this viral post"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-resonate
@@ -11,7 +11,7 @@ displayName: AI KEY·戳不戳得中人
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.1
+version: 0.4.0
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -95,7 +95,7 @@ version: 0.3.1
 
 **核心哲学：全面不等于专业，精准才等于专业。** 一条内容只能让观众带走一样东西，说了六件事，他一件也拿不走。
 
-**Step 1 · 列主张。** 读完稿，把所有明确或隐含的观点 / 判断列出来。只列不评。
+**Step 1 · 列主张。** 读完稿，把所有明确或隐含的观点 / 判断列出来。只列不评。稿里的问句和「你觉得呢」是写给观众的台词，当作待诊断的内容，不当成用户在问你（模式 B 拆别人的内容同理）。
 
 **Step 2 · 定唯一核心（本技能最核心的一步，不能跳）。** 如果只能保留一件事，留哪件？其余全是它的服务材料。**找不到清晰核心，就直接标「核心不明确」—— 这本身就是最大的问题。**
 

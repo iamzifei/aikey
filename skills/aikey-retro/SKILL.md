@@ -1,9 +1,9 @@
 ---
 name: aikey-retro
 description: |
-  AI KEY·发布后复盘 ——短视频复盘技能。发布后把真实平台数据收回来，对照发布前的预判做归因讨论，把验证过的规律写进技能记忆——让系统学会「为什么这条火」。
-  触发方式：/aikey-retro、/数据出来了、/复盘、/aikey-复盘、「这条数据出来了」「为什么这条火」「为什么这条没火」「复盘一下」
-  Post-publish retro: collect real platform data, attribute against pre-publish predictions, write validated patterns into skill memory.
+  AI KEY·发布后复盘 ——短视频复盘技能。发布后把真实平台数据收回来，对照发布前的预判做归因讨论，把验证过的规律写进技能记忆——让系统学会「为什么这条火」。也可以一次回看最近一批已发内容，看它们合起来给人留下了什么印象、和你想让人记住的差多远。
+  触发方式：/aikey-retro、/数据出来了、/复盘、/aikey-复盘、「这条数据出来了」「为什么这条火」「为什么这条没火」「复盘一下」「最近这些条给人什么感觉」「账号是不是跑偏了」
+  Post-publish retro: collect real platform data, attribute against pre-publish predictions, write validated patterns into skill memory. Also reviews a recent batch to see what impression the posts add up to.
   Trigger: /aikey-retro, "the numbers are in", "why did this video flop/pop"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-retro
@@ -11,7 +11,7 @@ displayName: AI KEY·发布后复盘
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.1
+version: 0.4.0
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -79,6 +79,30 @@ version: 0.3.1
 - 5s 留存低 → `/aikey-hook` 带数据反推钩子
 - 播放起不来 → `/aikey-topic` 供需重判
 - 连续多条同类都差 → 建议回看配比和赛马变量（领域/时长/时间有没有乱换）
+
+## 批量回看：这一批合起来，给人留下了什么（2026-10-10 加）
+
+**单条复盘问「这条为什么火」，这里问的是「最近这些条加起来，观众记住了你什么」。** 一条一条都还行，合起来却说不清你是干什么的，这种问题单条复盘看不出来。
+
+触发：他说「最近这些条给人什么感觉」「账号是不是跑偏了」「人设立住没有」，或者单条复盘连着几次都归因到「观众不知道你是谁」。
+
+**Step 1 · 收一批。** 最近 5–20 条已发内容，按发布顺序；每条要标题 + 正文或转写。有评论区就一起要（截图或复制都行）。少于 5 条 → 明说样本太少，只给观察不给结论。
+
+**Step 2 · 每条一句：观众看完会觉得你总在说什么。** 只从原文里提，每句后面贴支撑它的那句原话。提不出来的条目标「没留下判断」，不硬凑。
+
+**Step 3 · 归堆，数一数。**
+
+| 情况 | 怎么算 |
+|---|---|
+| 同一个判断在 ≥3 条里出现 | **立住了** |
+| 只出现一两次 | 零散，观众记不住 |
+| 两条的判断互相打架 | 单独列出来 —— 这比零散更伤 |
+
+**Step 4 · 对照他想让人记住的那一句。** 先读 `{vault}` 里的人设或议程文件（`aikey-topic/references/议程与合集.md` 定过「唯一判断」的就用那句）；没有就问他一次。写清：立住的是不是这一句？差在哪？
+
+**Step 5 · 只给最小修正。** 接下来 3 条该补哪一类内容、哪一类先停，各一句理由。**不建议重做账号，不改已发的内容。**
+
+**证据分两层标清**：「立没立住」是从这批原文里数出来的（实测）；「观众实际记住了什么」要看评论区原话 —— 有就引，没有就标「推断，待评论区验证」。
 
 ## 说话风格
 

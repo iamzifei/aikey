@@ -1,9 +1,9 @@
 ---
 name: aikey-title
 description: |
-  AI KEY·标题与封面 ——多平台标题与封面。按内容本身的形状选结构（12 种结构清单），过卖真 / 违禁词 / 不点名 / 黑话红线，每个标题说清用了什么结构、为什么配这条内容。**不给「通用爆款公式」——实证显示标题结构在不同账号间不通用，附脚本让你算出自己账号的规律。**
+  AI KEY·标题与封面 ——多平台标题与封面。按内容本身的形状选结构（12 种结构清单），过卖真 / 违禁词 / 不点名 / 黑话红线，每个标题说清用了什么结构、为什么配这条内容。**不给「通用爆款公式」——实证显示标题结构在不同账号间不通用，附脚本让你算出自己账号的规律。** 出候选前先看片子拍到哪一步，拍完的片子只承诺片子里有的。不负责口播开头那几句（→ aikey-hook）、封面图片设计、整稿能不能发（→ aikey-review）。
   触发方式：/aikey-title、/封面、/标题、/aikey-标题、「起个标题」「抖音封面写什么」「小红书标题」「封面大字怎么写」「帮我优化这个标题」
-  Multi-platform titles and cover text. Picks a structure that fits the content rather than applying a "proven formula" — cross-source testing found none of 12 common title structures replicate across differently-styled accounts. Ships a script to derive your own.
+  Multi-platform titles and cover text. Picks a structure that fits the content rather than applying a "proven formula" — cross-source testing found none of 12 common title structures replicate across differently-styled accounts. Ships a script to derive your own. Checks how far production has gone first; for finished footage, promises only what the footage delivers. Not for: spoken opening lines (aikey-hook), cover image design, publish-readiness (aikey-review).
   Trigger: /aikey-title, "give me a title", "Douyin cover text", "xiaohongshu title"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-title
@@ -11,7 +11,7 @@ displayName: AI KEY·标题与封面
 metadata:
   openclaw:
     emoji: 📐
-version: 0.3.1
+version: 0.4.0
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -50,6 +50,20 @@ version: 0.3.1
 
 🔴 **这是引入调用的全部理由。** 线性接力做不到这件事：等接力发生时稿子已经冻结，
 标题只能去迁就正文。**你被调用，就是为了能反过来说话。**
+
+### 交给开头：三行卡（2026-10-10 加）
+
+标题定了、接着要做开头（同一次调用里，或用户下一步去 `/aikey-hook`），**交三行，不交感觉**：
+
+```
+① 方向：这条押的是哪一句（一句话，就是选中的那个标题想让人认出的东西）
+② 边界：稿子 / 片子里实际有的材料，开头不能超出它（第 3–5 档时贴原句）
+③ 兑现：标题的承诺在正文第几句还上
+```
+
+**三处说同一件事，但不说同一句话**：
+- 封面大字给**关键词**，标题给**完整的处境**，开口第一句给**一个具体场景或问题**
+- 三处里有任意两处整句相同 → 改掉其中一处。整句重复等于观众在前 3 秒把同一句话读了两遍，白白占掉了留给缺口的位置
 
 ⚠️ 被调用时**不要**走完整的「先确认发哪个平台」问答——调用方已经知道平台。
 直接产出，把问答省给用户。
@@ -212,9 +226,13 @@ version: 0.3.1
 
 ## 工作流程
 
+**Step 0：片子拍到哪一步了（2026-10-10 加）。** 按 `references/拍摄进度分档.md` 判这条在哪一档：只发文字 / 还没拍 / 拍完能补拍 / 拍完不能补拍 / 从长录像里切。**上下文看得出就不问**，看不出用选择题问一次。档位决定标题能承诺多少：**拍完的片子，只承诺片子里已经说到的**；第 4、5 档每个候选都要标出对应片子里哪一句。
+
 **Step 1：确认平台 + 话题 + 人群（缺哪个问哪个，一次一个）。** 话题（讲什么）、人群（给谁看）、平台（发哪）三者齐了就动手。用户贴了一段内容 → 先提取核心话题和素材（数据 / 反差 / 金句）再进 Step 2。
 
 **Step 2：选结构（动手）。** 先判断**这条内容本身是什么形状**（清单型？推翻通念型？亲历型？），再从 S1–S12 里挑 3–5 个**匹配这个形状**的结构，各写一个候选。
+
+**已经有标题的，它就是候选 0（2026-10-10 加）。** 用户贴的、稿子里写着的、上次发过的，都算。候选 0 同样标结构编号、过红线；它要是有发布数据（点击、完播、收藏），一起带上。之后每个新候选都要写一句**它比候选 0 强在哪一点**（推送池更宽 / 主语换到了观众那端 / 多了一个他已经付出的代价……）。**说不出具体的一点 → 押候选 0**，不为了显得做了事而换掉一个能用的标题。候选 0 不享受豁免：手上有落点句时，它同样要对照落点句看押没押中 —— 没押中，这一点就是新候选强过它的地方。
 
 **不要为了凑数量把不匹配的结构硬套上去**——一条讲个人经历的内容硬做成「5 个方法」，标题和内容对不上，点进来的人会立刻走。
 
@@ -237,7 +255,7 @@ version: 0.3.1
 ```
 
 ## 特殊情况
-- **优化已有标题**：先判断它用了哪个结构（哪怕用户自己不知道）→ 判断这个结构配不配这条内容 → 换结构，或在同结构内改具体表达。
+- **优化已有标题**：原标题按 Step 2 当候选 0 → 先判断它用了哪个结构（哪怕用户自己不知道）→ 判断这个结构配不配这条内容 → 换结构，或在同结构内改具体表达。**新写的说不出比它强在哪，结论就是「原标题不用改」**，这是一个合格的结论。
 - **只想浏览有哪些写法**：给 S1–S12 速查表（见结构库），**并说清它是词汇表不是排行榜**，没有哪个天生更好。
 - **话题还没定**：反过来从观众入手，问他希望刷到的人第一反应是什么（想知道原因 / 心里一紧 / 「这说的就是我」/ 想学），用这个反应倒推该用哪类结构。
 

@@ -1,9 +1,9 @@
 ---
 name: aikey-hook
 description: |
-  AI KEY·开头前五秒 ——短视频开头专项技能。先诊断内容有没有货（门禁），再比较真实材料入口与大众悬念入口，结合起手与留白出候选，每个候选标注用了哪个原理。
+  AI KEY·开头前五秒 ——短视频开头专项技能。先诊断内容有没有货（门禁），再比较真实材料入口与大众悬念入口，结合起手与留白出候选，每个候选标注用了哪个原理。片子拍完且不能补拍的，只从说出口的原话里挑开头。不负责标题和封面大字（→ aikey-title）、整稿哪里会划走（→ aikey-flow）、能不能发（→ aikey-review）。
   触发方式：/aikey-hook、/钩子、/开头、/aikey-开头、「开头怎么写」「前五秒抓不住人」「帮我想几个钩子」「这个开头行不行」
-  Opening-hook specialist: gate-check content first, then generate hooks by expectation forms and information-gap methods.
+  Opening-hook specialist: gate-check content first, then generate hooks by expectation forms and information-gap methods. For finished footage that cannot be reshot, picks only lines already spoken. Not for: titles and cover text (aikey-title), drop-off across the script (aikey-flow), publish-readiness (aikey-review).
   Trigger: /aikey-hook, "how to write the opening", "give me some hooks"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-hook
@@ -11,7 +11,7 @@ displayName: AI KEY·开头前五秒
 metadata:
   openclaw:
     emoji: 📐
-version: 0.4.3
+version: 0.5.0
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -123,6 +123,12 @@ version: 0.4.3
 5. **开头救不了没货的正文**——门禁不过，停止优化。
 
 ## 工作流程
+
+**Phase 0：片子拍到哪一步了（2026-10-10 加）。** 按 `aikey-title/references/拍摄进度分档.md` 判档。上下文看得出就不问，看不出用选择题问一次 —— **这一问不挡门禁**：Phase 1 照常先做，档位只影响 Phase 3 的候选从哪来。
+- 只发文字 / 还没拍 → 照常出候选，可以写新句
+- 拍完能补拍 → 可以写新句，但只承诺正文里已经说到的；正文不动
+- **拍完不能补拍 / 从长录像里切 → 只从已经说出口的原话里挑**（可以挪到最前、可以剪短），每个候选贴出它在片子里的原文。想到了片子里没有的好句子，列进「下次拍可以这么开」，不混进候选
+- 从 `/aikey-title` 接过来的**三行卡**（方向 / 边界 / 兑现）：第②行就是开头的边界，候选不许超出；第③行告诉你正文在哪还账，填进候选的「正文兑现处」。开口第一句不要和标题、封面大字整句相同
 
 **Phase 1：门禁诊断（先做，不问）。**
 

@@ -99,6 +99,7 @@ display_name() {
     aikey-path)           echo "AI KEY·从哪儿下手" ;;
     aikey-trend)          echo "AI KEY·风口在哪" ;;
     aikey-drama)          echo "AI KEY·短剧编剧" ;;
+    aikey-cover)          echo "AI KEY·封面图制作" ;;
     aikey-track)          echo "AI KEY·有什么到期了" ;;
     aikey-skillify)       echo "AI KEY·做成一个技能" ;;
     *)                  echo "" ;;   # unknown slug: caller reports and skips

@@ -25,7 +25,7 @@ from skillprefix import ALIASES, member
 # so a rename touches one line there instead of sixteen here.
 CONTENT_SUFFIXES = {"", "topic", "benchmark", "script", "title", "hook", "review",
                     "flow", "cut", "retro", "post", "mvp", "resonate",
-                    "concept", "skillify", "drama"}
+                    "concept", "skillify", "drama", "cover"}
 CONTENT = {member(s) for s in CONTENT_SUFFIXES}
 
 

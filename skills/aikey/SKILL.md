@@ -11,7 +11,7 @@ displayName: AI KEY
 metadata:
   openclaw:
     emoji: 📐
-version: 0.5.0
+version: 0.5.1
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。

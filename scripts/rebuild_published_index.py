@@ -2,7 +2,7 @@
 """
 Rebuild the published-content index from the published folders themselves.
 
-The manual index (config.paths.published_index, default `_已发布/已发布内容库.md`)
+The manual index (config.paths.published_index, default `已发布/已发布内容库.md`)
 is the dedup gate every topic must pass before production. It is filled by hand
 after each publish, and "after each publish" is exactly when nobody remembers —
 one script went unregistered for four days, during which the gate was blind to
@@ -151,12 +151,12 @@ def main() -> int:
     paths = load_paths(config_file)
     vault_raw = paths.get("vault_root") or ""
     vault = Path(os.path.expanduser(vault_raw)).resolve() if vault_raw else Path.cwd()
-    drafts = vault / (paths.get("drafts") or "_草稿")
-    manual_index = vault / (paths.get("published_index") or "_已发布/已发布内容库.md")
+    drafts = vault / (paths.get("drafts") or "稿件")
+    manual_index = vault / (paths.get("published_index") or "已发布/已发布内容库.md")
 
     # Where the one-folder-per-piece directories live. `config.paths.published_dir`
     # when set; otherwise the first candidate that actually holds dated folders.
-    candidates = list(dict.fromkeys(c for c in (paths.get("published_dir"), "_草稿/已发布", paths.get("published"), "_已发布") if c))
+    candidates = list(dict.fromkeys(c for c in (paths.get("published_dir"), "稿件/已发布", paths.get("published"), "已发布") if c))
     published_dir = None
     for c in candidates:
         if not c:
@@ -190,7 +190,7 @@ def main() -> int:
                 unregistered.append(r)
         # every backtick-quoted path that points into a published folder must
         # resolve from the vault root — this catches a wrong prefix
-        # (`_草稿/_草稿/已发布/…`) as well as a folder that was renamed
+        # (`稿件/_草稿/已发布/…`) as well as a folder that was renamed
         rel_pub = published_dir.relative_to(vault).as_posix()
         for m in re.finditer(r"`([^`\n]*" + re.escape(rel_pub.split("/")[-1]) + r"/[^`\n]+)`", manual):
             raw = m.group(1).strip()

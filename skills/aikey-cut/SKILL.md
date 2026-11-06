@@ -1,23 +1,20 @@
 ---
 name: aikey-cut
 description: |
-  AI KEY·口播剪辑 ——口播成片剪辑技能。把拍好的素材剪成可发布的成片：**按文案规则做内容层重组**（删废镜头/去重复/重排顺序）→ 语音剪辑（去口癖/停顿）→ 加速 → 字幕 → B-roll → 交付。
-  🔴 **只删和重排，不加词** —— 说话人没说过的话一个字都不加。
-  中文口播的剪辑工作流（判据按中文口播写；用户用别的语言时照常用他的语言交流，并说明规则是按中文口播定的）。
-  默认参数（抖音 · 保持原长 · 1.15× · HarmonyOS Sans 粗体字幕 · 黄色 #FFE20A 高亮）属于澳洲AI教父账号：**确认是这个账号**才直接用；其他账号先读 `config`，读不到就问，不套用。
-  检测不到 ChatCut 会引导安装，并给出**本机转写旁路** —— 内容层的活全部不需要 ChatCut。
-  用户要 B-roll / 特效 / 转场而手上没有真素材时，可按文案逐句判哪几句能配生成画面（比喻、过程、氛围、转场可以；「我做过」「真实发生」这类证言绝不），写成 Seedance 提示词交给 chatcut-video-gen 出片，提交前先确认花费，发布时提醒打开 AI 生成声明。
-  触发方式：/aikey-cut、/剪片、/aikey-剪、「把这条口播剪出来」「口播素材剪成成片」「用 aikey-cut 剪」。普通的「加字幕」「剪一下」不自动触发，先问是不是要走这套口播剪辑流程
-  Talking-head footage → publishable cut. Restructures content by copy rules (delete/reorder only, never add words), then cleans speech, speeds up, captions, B-roll. When the user wants B-roll, effects or transitions and has no real footage, picks which lines may take generated inserts (metaphor, process, mood, transitions — never testimony) and writes Seedance prompts for chatcut-video-gen, cost confirmed first. Falls back to local transcription when ChatCut is unavailable.
-  Chinese talking-head workflow; defaults belong to one account and are applied only after confirming it.
-  Trigger: /aikey-cut, "cut this talking-head footage with aikey-cut"
+  AI KEY·口播剪辑 ——口播成片剪辑技能。把拍好的素材剪成可发布的成片：按文案规则做内容层重组（删废镜头 / 去重复 / 重排）→ 去口癖停顿 → 加速 → 字幕 → B-roll → 交付。🔴 只删和重排，不加词。
+  判据按中文口播写。默认参数（抖音 · 1.15× · 粗体字幕 · 黄色高亮）属于澳洲AI教父账号，确认是这个账号才直接用；其他账号先读 `config`，读不到就问。
+  没有 ChatCut 会引导安装，并给本机转写旁路。没有真素材时，可逐句判哪几句能配生成画面（比喻、过程、氛围可以；证言绝不），写成 Seedance 提示词交给 chatcut-video-gen，先确认花费。
+  不负责写稿（→ aikey-script）、封面图（→ aikey-cover）。
+  触发方式：/aikey-cut、/剪片、/aikey-剪、「把这条口播剪出来」「口播素材剪成成片」。普通的「加字幕」「剪一下」先问是不是要走这套流程
+  Talking-head footage → publishable cut: content restructure (delete/reorder only, never add words), speech cleanup, speed-up, captions, B-roll; generated inserts never carry testimony. Defaults belong to one account and apply only after confirming it.
+  Trigger: /aikey-cut, "cut this talking-head footage"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-cut
 displayName: AI KEY·口播剪辑
 metadata:
   openclaw:
     emoji: 📐
-version: 0.4.2
+version: 0.5.0
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -216,6 +213,8 @@ version: 0.4.2
 2. **画面** —— 渲**全尺寸**帧，**不看缩略图下结论**
 
 ⚠️ 缩略图只用来做「挑哪一帧」的粗筛。
+
+**交付前按位置审一遍成片（2026-11-06 加）**：观众是按时间走的，不是按段落。固定看这几处的全尺寸帧并听那一段：**第 0–2 秒**（第一句话说完没、画面有没有字）· **第 2–5 秒**（钩子落地没、有没有被语气词吃掉）· **每一处剪切点前后各 1 秒**（跳切、吞字、口型）· **最后 3 秒**（停在哪、有没有多出一句行动指令）。哪一处不对，写清时间码，不写「整体还行」。
 详见 `references/ChatCut实操.md` §三。
 
 ---
@@ -260,6 +259,13 @@ version: 0.4.2
 口述比写作更容易临场钝化。**凡 AI 版更锋利的，单独标出来问。**
 
 ---
+
+## 接手与交出
+
+- **接手**：一条已经拍完的口播素材，要剪成能发布的成片
+- **交出**：只删和重排的内容层重组，去口癖停顿、加速、字幕、按需 B-roll，交付成片并回填上传版
+- **不交出**：选题（→ aikey-topic）、写稿（→ aikey-script）、发布前审稿（→ aikey-review）
+- **之后常接**：成片要配封面图 → aikey-cover；发布后数据回来 → aikey-retro
 
 ## 六、绝对不做
 

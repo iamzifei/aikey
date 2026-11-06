@@ -39,7 +39,7 @@ PATTERNS = [
     # local machine paths. `~/.claude/skills/` is the standard install location and
     # carries no identity, so it is only a leak inside a skill body (where it would be
     # a hardcoded cross-skill path) — install docs are expected to name it.
-    ("本机路径", r"/Users/[a-z]+/|~/Dev/"),
+    ("本机路径", r"/Users/[^/\s`]+/|~/Dev/"),
     ("技能内硬编码路径", r"~/\.claude/skills/", ("SETUP.md", "README.md", "install.sh")),
 ]
 

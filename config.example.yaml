@@ -133,20 +133,21 @@ platforms:
 # ─────────────────────────────────────────────────────────────
 paths:
   vault_root: ""                 # 留空 = 用当前工作目录，并提醒你一次（见 aikey/references/家族公约.md §一）
-  drafts: "_草稿"
-  published: "_已发布"
+  drafts: "稿件"
+  published: "已发布"
   topic_pipeline: "06-选题装配/选题管道.md"
   test_pipeline: "06-选题装配/X测试管道.md"
   benchmark: "01-原始素材区"    # aikey-benchmark 扒下来的对标账号落在这里
   memory: "08-技能记忆"
-  tracking: "09-在途"        # aikey-track 的存放位置(承诺/到期/监测/在途/队列)
+  tracking: "在途"        # aikey-track 的存放位置(承诺/到期/监测/在途/队列)
   empirical: "aikey/references/实证规律库.md"
   scoring_anchors: "aikey-review/references/评分锚点.md"
   voice: "00-规则与索引/语言风格档案.md"              # 出稿前必读，管「像不像你说话」
+  agenda: "00-规则与索引/账号议程.md"        # 账号要在观众脑子里留下的那一句判断（议程）。写稿和选题开工前读；文件不存在就问一次，别替你编
   format: "00-规则与索引/日更口播稿模板与钩子库.md"    # 长度 / 前 N 秒 / 钩子库 / 整稿迭代流程
-  feedback_rules: "docs/文案反馈规则库/00-规则总表.md" # 从真实改稿反馈长出来的细则，冲突时以它为准
-  published_index: "_已发布/已发布内容库.md"           # 选题前查重的强制闸门（手工表）
-  published_dir: "_草稿/已发布"                        # 一条内容一个文件夹（YYYYMMDD-编号-短标题）放在哪；scripts/rebuild_published_index.py 从这里重建自动表
+  feedback_rules: "规则库/文案反馈规则库/00-规则总表.md" # 从真实改稿反馈长出来的细则，冲突时以它为准
+  published_index: "已发布/已发布内容库.md"           # 选题前查重的强制闸门（手工表）
+  published_dir: "稿件/已发布"                        # 一条内容一个文件夹（YYYYMMDD-编号-短标题）放在哪；scripts/rebuild_published_index.py 从这里重建自动表
   retro: "03-处理状态/复盘/"                          # 上一条的实测数据
 
 # ─────────────────────────────────────────────────────────────

@@ -1,17 +1,17 @@
 ---
 name: aikey-drama
 description: |
-  AI KEY·短剧编剧 ——竖屏短剧编剧技能。给一个选题或一段初始内容，写出一个开头抓人、结尾留得住人的短剧剧本。两种产出：① 单集短剧（1–3 分钟，自成一体，账号自己就能拍）；② 付费连续剧开发包（一句话卖点 + 梗概 + 人物小传 + 整季分集大纲并标出付费卡点 + 前 3 集完整剧本）。先把冲突埋进设定里，再按「开场爆点 → 冲突 → 最大冲击 → 结尾停在问题上」切每一集；反转必须事先埋线，台词每一句都要推进冲突或露出人物。剧本定稿后，可选把它切成分镜表，并写成能直接交给 Seedance 生成的视频提示词（人物参考图锁长相、分段时间轴、台词节拍），出片交给 chatcut-video-gen，提交前先确认花费。
-  触发方式：/aikey-drama、/短剧、/写短剧、/短剧剧本、「写个短剧」「帮我把这个写成短剧」「短剧剧本」「竖屏剧」「微短剧」「付费短剧怎么写」「写个剧情短视频」
-  Vertical short-drama screenwriting. From a premise or a rough idea to a script with an opening that grabs and an ending that holds. Two outputs: a standalone 1–3 minute episode, or a paid-series development pack (logline, synopsis, character bios, full episode outline with paywall points marked, and the first three episodes in full). Conflict is built into the premise; every episode runs opening jolt → friction → biggest hit → end on a question; every twist is planted in advance. Optionally turns the final script into a shot list and Seedance-ready video prompts (identity-locked references, timed segments, dialogue beats), handed to chatcut-video-gen after the cost is confirmed.
-  Trigger: /aikey-drama, "write a short drama", "turn this into a vertical drama", "micro-drama script", "write a paid short series"
+  AI KEY·短剧编剧 ——竖屏短剧编剧技能。给一个选题或一段初始内容，写出开头抓人、结尾留得住人的短剧剧本。两种产出：① 单集短剧（1–3 分钟，账号自己能拍）；② 付费连续剧开发包（卖点 + 梗概 + 人物小传 + 标出付费卡点的分集大纲 + 前 3 集剧本）。冲突埋进设定，每集按「开场爆点 → 冲突 → 最大冲击 → 停在问题上」切；反转事先埋线。定稿后可选切分镜，写成 Seedance 视频提示词交给 chatcut-video-gen，先确认花费。不负责口播稿（→ aikey-script）。
+  触发方式：/aikey-drama、/短剧、/写短剧、「写个短剧」「帮我把这个写成短剧」「竖屏剧」「微短剧」「付费短剧怎么写」
+  Vertical short-drama screenwriting: a standalone 1–3 minute episode, or a paid-series pack (logline, synopsis, bios, outline with paywall points, first three episodes). Optional shot list and Seedance prompts after the cost is confirmed.
+  Trigger: /aikey-drama, "write a short drama", "micro-drama script"
   —— AI KEY · 不给公式，给判据。每条规则都标了实测代价。
 slug: aikey-drama
 displayName: AI KEY·短剧编剧
 metadata:
   openclaw:
     emoji: 📐
-version: 0.2.3
+version: 0.2.5
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -111,6 +111,8 @@ version: 0.2.3
 
 ## Phase 4：写
 
+共创时怎么问、怎么记，按 `aikey-script/references/协作推进.md`（素材分原话 / 事实 / 推断 / 设想，只问会改变走向的问题）。
+
 ### A · 单集短剧
 
 按 `剧本格式.md` A 模板，一次写完整集：
@@ -188,6 +190,8 @@ version: 0.2.3
 
 ## Phase 7（可选）：转分镜与生成提示词
 
+> 本节写到提示词，并按确认出片为止。要把整集做成一条全生成画面的成片（画风、设定图、首尾帧、独立审核、代码后期），接力 `/aikey-aivideo`，从它的第 2 步接着做。
+
 **只在用户要「用 AI 生成画面」时做。** 剧本没定稿不做——剧本一改，分镜和提示词全部要重写。
 
 按 `references/分镜与生成提示词.md`：
@@ -201,6 +205,13 @@ version: 0.2.3
 🔴 **照实说**：提示词是按常见写法写的，本技能没有实测出片；同一条提示词每次出片会不一样，要试几次。
 
 ---
+
+## 接手与交出
+
+- **接手**：一个选题或一段初始内容，想写成竖屏短剧；想开发一部付费连续剧
+- **交出**：单集剧本，或连续剧开发包（卖点、梗概、人物、分集大纲与卡点、前 3 集），可选分镜提示词
+- **不交出**：真实经历或知识口播（→ aikey-script）、发布用的正式标题和封面字（→ aikey-title）
+- **之后常接**：要正式剧名和封面字 → aikey-title；想查剧本哪里节奏会让人划走 → aikey-flow；要拍成全生成的成片 → aikey-aivideo
 
 ## 不做什么
 

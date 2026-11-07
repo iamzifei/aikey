@@ -11,7 +11,7 @@ displayName: AI KEY·拿不准的时候
 metadata:
   openclaw:
     emoji: 📐
-version: 0.2.1
+version: 0.2.2
 ---
 
 > 本技能原名 `/zmm-…`，v1.0.0 起改名为 **AI KEY**（`/aikey-…`），旧名字不再更新。老用户升级见 [README](https://github.com/iamzifei/aikey#老用户升级zmm-已改名为-ai-key)。
@@ -38,6 +38,8 @@ version: 0.2.1
 | 「我知道该做但就是不动」「一直拖着」「提不起劲」 | **C · 卡住了** |
 
 **判不出来就走 B。** B 是另外两个的前置——**问题没搞清楚，推演和执行都是在错的题上做功。**
+
+> 不归这里：已经动手、同一件事**改了好几版还是不对**（稿子、标题、规则、方案越改越乱）→ `/aikey-reframe`。本技能管还没拍板的事，它管做着做着打转的事。
 
 ---
 

@@ -103,6 +103,7 @@ display_name() {
     aikey-cover)          echo "AI KEY·封面图制作" ;;
     aikey-track)          echo "AI KEY·有什么到期了" ;;
     aikey-skillify)       echo "AI KEY·做成一个技能" ;;
+    aikey-reframe)        echo "AI KEY·越改越不对" ;;
     *)                  echo "" ;;   # unknown slug: caller reports and skips
   esac
 }
